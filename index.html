@@ -850,7 +850,7 @@
                         <div class="summary-item">
                             <span class="fact-label">Default route</span>
                             <strong class="fact-value">Plan in chat first, then use Agent mode only when the slice is concrete.</strong>
-                            <p>Favor Skills plus Sonnet 4.6 (1x) or GPT 5.4 (1x) for most work. Escalate to expensive models such as GPT 5.5 (7.5x) or Opus 4.8 (15x) only when the planning or review risk justifies the spend.</p>
+                            <p>Favor Skills plus Sonnet 4.6 (1x) or GPT 5.4 (1x) for most work. Escalate to expensive models such as GPT 5.5, Opus 4.8, or GLM 5.2 only when the planning or review risk justifies the spend.</p>
                         </div>
                         <div class="summary-item">
                             <span class="fact-label">Completion gate</span>
@@ -916,7 +916,7 @@
                                 <tr>
                                     <td>Multi-file task, unclear sequencing, or need for explicit handoff artifacts</td>
                                     <td>Planner then executor</td>
-                                    <td>Use GPT 5.5 to write <span class="inline-code">plan.md</span>, then hand execution to a lower-cost model</td>
+                                    <td>Use a frontier model such as GPT 5.5, Opus 4.8, or GLM 5.2 to write <span class="inline-code">plan.md</span>, then hand execution to a lower-cost model</td>
                                 </tr>
                                 <tr>
                                     <td>Security-sensitive, architecture-heavy, or regression-prone work</td>
@@ -1040,7 +1040,7 @@
                         </div>
                     </div>
                     <div class="callout" style="border-left-color: var(--warning); background: rgba(210, 153, 34, 0.1);">
-                        <p><strong>Cost tip:</strong> favor <a href="https://aitmpl.com/skills/" target="_blank" rel="noreferrer">Skills</a> plus Sonnet 4.6 (1x) and GPT 5.4 (1x) for routine execution and scoped reasoning. For real solution-finding, talk through the problem with a teammate first when needed, then use models to accelerate execution or review instead of outsourcing the initial engineering judgment to Opus 4.8 (15x) or GPT 5.5 (7.5x).</p>
+                        <p><strong>Cost tip:</strong> favor <a href="https://aitmpl.com/skills/" target="_blank" rel="noreferrer">Skills</a> plus Sonnet 4.6 (1x) and GPT 5.4 (1x) for routine execution and scoped reasoning. For real solution-finding, talk through the problem with a teammate first when needed, then use models to accelerate execution or review instead of outsourcing the initial engineering judgment to frontier models such as Opus 4.8, GPT 5.5, or GLM 5.2.</p>
                     </div>
                 </section>
 
