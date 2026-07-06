@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -1038,66 +1039,66 @@
             <article class="article">
                 <section class="page-intro" id="overview">
                     <p class="eyebrow">Guideline</p>
-                    <h1 class="title-full-width">Optimal guide, rules and governance for efficient coding-agent workflows</h1>
-                    <p class="lede lede-full-width">Use agents only when they clearly help with the thinking work. Keep everything else manual, scoped, and cheap.</p>
-                    <p class="doc-meta doc-meta-single-line"><strong>Version 1.3</strong> &nbsp;&middot;&nbsp; Last updated: 6 July 2026 &nbsp;&middot;&nbsp; Living document, reviewed at each model release.</p>
+                    <h1 class="title-full-width">A simple guide and rules for using coding agents well</h1>
+                    <p class="lede lede-full-width">Use AI agents only when they really help you think. Do everything else by hand, keep it small, and keep it cheap.</p>
+                    <p class="doc-meta doc-meta-single-line"><strong>Version 1.4</strong> &nbsp;&middot;&nbsp; Last updated: 6 July 2026 &nbsp;&middot;&nbsp; Living document, reviewed at each model release.</p>
                     <div class="tldr-card">
                         <p class="tldr-title">TL;DR &mdash; the whole guide in six lines</p>
                         <ul>
-                            <li><strong>Obvious, short, local task</strong> &rarr; do it manually. No agent.</li>
-                            <li><strong>Clear, simple slice</strong> &rarr; MAI Code 1 Flash or Haiku 4.5.</li>
-                            <li><strong>Code-heavy execution</strong> &rarr; GPT 5.3-Codex. <strong>Ambiguous or multi-file</strong> &rarr; Sonnet 5.</li>
-                            <li><strong>Planning and the hardest slices only</strong> &rarr; Opus 4.8 (Fable 5 on approved teams).</li>
-                            <li><strong>Every turn re-sends the whole conversation</strong> &rarr; fresh chat per task, attach only 3&ndash;5 relevant files.</li>
-                            <li><strong>Never</strong> share PII, secrets, credentials, or real customer data with a model.</li>
+                            <li><strong>Easy, short task</strong> &rarr; do it yourself. No agent.</li>
+                            <li><strong>Small, clear task</strong> &rarr; MAI Code 1 Flash or Haiku 4.5.</li>
+                            <li><strong>Lots of code</strong> &rarr; GPT 5.3-Codex. <strong>Unclear or many files</strong> &rarr; Sonnet 5.</li>
+                            <li><strong>Planning and the hardest tasks only</strong> &rarr; Opus 4.8 (Fable 5 for some teams).</li>
+                            <li><strong>Every message sends the whole chat again</strong> &rarr; start a new chat for each task, and attach only 3&ndash;5 files you need.</li>
+                            <li><strong>Never</strong> give an AI private data, passwords, keys, or real customer data.</li>
                         </ul>
                     </div>
                     <div class="page-summary">
                         <div class="summary-item">
                             <span class="fact-label">Budget driver</span>
-                            <strong class="fact-value">Context waste is usually more expensive than prompt quality.</strong>
-                            <p>The prompt engineering and context engineering materials in this repository point to the same conclusion: better context selection beats longer prompting.</p>
+                            <strong class="fact-value">Sending too much context usually costs more than writing a perfect prompt.</strong>
+                            <p>The main lesson: choosing the right files matters more than writing longer prompts.</p>
                         </div>
                         <div class="summary-item">
                             <span class="fact-label">Default route</span>
-                            <strong class="fact-value">Plan in chat first, then use Agent mode only when the slice is concrete.</strong>
-                            <p>Copilot now bills by token consumption, so cost scales with context size on every turn. Favor a lightweight model for simple work and a mid-tier model (such as GPT 5.3-Codex for code-heavy work or Sonnet 5 for general reasoning) for most execution. Escalate to Opus 4.8 only when the planning or review risk justifies the extra token spend.</p>
+                            <strong class="fact-value">Plan in chat first. Use Agent mode only when the task is clear and small.</strong>
+                            <p>Copilot now charges by tokens, so bigger context costs more every time. Use a cheap model for simple work, and a mid model (GPT 5.3-Codex for code, or Sonnet 5 for thinking) for most work. Use Opus 4.8 only when the task is hard enough to be worth the extra cost.</p>
                         </div>
                         <div class="summary-item">
                             <span class="fact-label">Completion gate</span>
-                            <strong class="fact-value">A task is complete only after validation, commit, review, and manual verification.</strong>
-                            <p>The 70 percent problem still applies: the first draft is cheap, but the last mile requires engineering judgment.</p>
+                            <strong class="fact-value">A task is done only after you test it, commit it, review it, and check it yourself.</strong>
+                            <p>The AI gets you most of the way fast, but finishing the job well still needs your judgment.</p>
                         </div>
                     </div>
                     <div class="callout callout-full-width" style="border-left-color: var(--danger); background: rgba(248, 81, 73, 0.1);">
-                        <p><strong>Data safety, non-negotiable:</strong> never share personal, private, or sensitive data with an AI. That includes PII (names tied to records, emails, phone numbers, addresses, ID or passport numbers), credentials and secrets (API keys, tokens, passwords, private keys, <span class="inline-code">.env</span> contents), and real customer or user data. When a task touches sensitive data, use placeholders, redacted samples, or synthetic fixtures. When in doubt, leave it out and ask a teammate first.</p>
+                        <p><strong>Data safety (very important):</strong> never give an AI private or sensitive data. This means personal data (names with records, emails, phone numbers, addresses, ID or passport numbers), passwords and secrets (API keys, tokens, passwords, private keys, <span class="inline-code">.env</span> files), and real customer data. If a task needs sensitive data, use fake or hidden sample data instead. If you are not sure, leave it out and ask a teammate first.</p>
                     </div>
                     <div class="callout callout-full-width" style="border-left-color: var(--success); background: rgba(63, 185, 80, 0.08);">
-                        <p><strong>Must-watch course:</strong> <a href="https://drive.google.com/file/d/1h4fyIqX81i7JmusKLe0IFql4IZQ7T9lK/view?usp=sharing" target="_blank" rel="noreferrer">Watch this course</a>. It takes about 1 hr 51 min, and you can speed up the lessons you already know.</p>
+                        <p><strong>Must-watch course:</strong> <a href="https://drive.google.com/file/d/1h4fyIqX81i7JmusKLe0IFql4IZQ7T9lK/view?usp=sharing" target="_blank" rel="noreferrer">Watch this course</a>. It is about 1 hr 51 min. You can speed up the parts you already know.</p>
                     </div>
                 </section>
 
                 <section class="section" id="principles">
                     <div class="section-head">
                         <h2>Operating principles</h2>
-                        <p>This policy turns the repository guidance on prompt engineering, context engineering, and review-iterate workflows into a practical operating standard.</p>
+                        <p>These are the main rules we follow when we work with AI agents.</p>
                     </div>
                     <div class="row-list">
                         <div class="row-item">
                             <h3>Manual first</h3>
-                            <p>If a task is obvious, local, and short, do it manually. Do not open an agent session for work that is faster to complete than to describe.</p>
+                            <p>If a task is easy and short, just do it yourself. Do not start an agent for work that is faster to do than to explain.</p>
                         </div>
                         <div class="row-item">
-                            <h3>Context beats prompt</h3>
-                            <p>A basic prompt plus the correct 3 to 5 files is better than a long, clever prompt with oversized context. Spend tokens on relevant examples, not on decoration.</p>
+                            <h3>The right files matter more than a clever prompt</h3>
+                            <p>A simple prompt with the right 3 to 5 files works better than a long, clever prompt with too many files. Spend your tokens on useful files, not extra words.</p>
                         </div>
                         <div class="row-item">
-                            <h3>Keep sessions disposable</h3>
-                            <p>Open a fresh conversation for a new task. Long sessions degrade accuracy, forget constraints, and turn every future turn into a more expensive one.</p>
+                            <h3>Start a new chat for each task</h3>
+                            <p>Start a new chat for each new task. Long chats get less accurate, forget your rules, and cost more with every message.</p>
                         </div>
                         <div class="row-item">
-                            <h3>Review before chaining</h3>
-                            <p>Never let one model output automatically become the next model input without a human checkpoint. Chaining without review is a common token leak and a common quality failure.</p>
+                            <h3>Always check before passing work to another model</h3>
+                            <p>Never let one model's answer go straight into another model without you checking it first. Skipping this check wastes money and lowers quality.</p>
                         </div>
                     </div>
                 </section>
@@ -1105,7 +1106,7 @@
                 <section class="section" id="decision">
                     <div class="section-head">
                         <h2>Manual vs agent decision gate</h2>
-                        <p>Use the smallest route that can solve the problem correctly. Escalate only when ambiguity, risk, or system size proves that escalation is necessary.</p>
+                        <p>Use the smallest, cheapest option that can do the job right. Move up only when the task is unclear, risky, or large.</p>
                     </div>
                     <div class="table-wrap">
                         <table>
@@ -1118,24 +1119,24 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Small copy edits, obvious UI tweaks, one-line changes, straightforward renames</td>
+                                    <td>Small text edits, easy UI changes, one-line changes, simple renames</td>
                                     <td>Manual only</td>
                                     <td>No agent</td>
                                 </tr>
                                 <tr>
-                                    <td>Clear implementation slice with low ambiguity and local scope</td>
+                                    <td>A clear, small task with little doubt</td>
                                     <td>Executor only</td>
-                                    <td>Use MAI Code 1 Flash or Haiku 4.5 for super simple tasks, GPT 5.3-Codex for code-heavy work, or Sonnet 5 for typical executor work that needs reasoning</td>
+                                    <td>Use MAI Code 1 Flash or Haiku 4.5 for very simple tasks, GPT 5.3-Codex for heavy coding, or Sonnet 5 for normal work that needs thinking</td>
                                 </tr>
                                 <tr>
-                                    <td>Multi-file task, unclear sequencing, or need for explicit handoff artifacts</td>
+                                    <td>Task with many files, unclear order, or that needs written hand-off notes</td>
                                     <td>Planner then executor</td>
-                                    <td>Use Opus 4.8 to write <span class="inline-code">plan.md</span>, then hand execution to a lower-cost model</td>
+                                    <td>Use Opus 4.8 to write <span class="inline-code">plan.md</span>, then let a cheaper model do the work</td>
                                 </tr>
                                 <tr>
-                                    <td>Security-sensitive, architecture-heavy, or regression-prone work</td>
+                                    <td>Security work, big design work, or work that often breaks other things</td>
                                     <td>Planner, executor, reviewer</td>
-                                    <td>Use a premium reviewer only if the cost of a defect is higher than the cost of the review</td>
+                                    <td>Use an expensive model to review only when a bug would cost more than the review</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1145,31 +1146,31 @@
                 <section class="section" id="tokenomics">
                     <div class="section-head">
                         <h2>Tokenomics for developers</h2>
-                        <p>Copilot bills by tokens, not requests. Two numbers drive your whole cost: how much context you send in, and how much the model writes back out. Everything else follows from those two.</p>
+                        <p>Tokenomics just means how token cost works. Copilot charges you by tokens, not by the number of messages. Two things set your cost: how much text you send in, and how much text the model writes back. Everything else comes from these two.</p>
                     </div>
                     <div class="callout callout-full-width">
-                        <p><strong>The one thing to remember:</strong> every message re-sends the whole conversation. Turn 10 does not cost one message, it re-bills the entire thread so far as input. That is why long sessions get expensive, and why starting a fresh chat per task is a cost decision, not just a tidiness one.</p>
+                        <p><strong>The one thing to remember:</strong> every message sends the whole chat again. When you send your 10th message, you do not pay for one message. You pay for the whole chat so far, again, as input. This is why long chats get expensive, and why starting a new chat for each task saves money, not just keeps things tidy.</p>
                     </div>
                     <div class="row-list">
                         <div class="row-item">
                             <h3>Input and output both cost, output usually more</h3>
-                            <p>You pay for the context you send in and the tokens the model writes back. Output is billed at a higher rate per token, so verbose generation and long reasoning are where cost tends to land.</p>
+                            <p>You pay for the text you send in and the text the model writes back. The model's answer costs more per token, so long answers and long thinking cost the most.</p>
                         </div>
                         <div class="row-item">
-                            <h3>Context is cumulative</h3>
-                            <p>Five attached files are re-sent on every turn until the session ends. Large context is a per-turn tax, not a one-time charge. This is the direct reason to bring only the 3 to 5 files that matter.</p>
+                            <h3>Context adds up</h3>
+                            <p>Five attached files are sent again with every message until the chat ends. Big context is a cost you pay every message, not just once. This is why you should attach only the 3 to 5 files you really need.</p>
                         </div>
                         <div class="row-item">
-                            <h3>Model choice is a multiplier</h3>
-                            <p>The same task on a frontier model can cost several times what it costs on a light model. The routing decision moves the bill far more than prompt wording ever will.</p>
+                            <h3>The model you pick changes the cost a lot</h3>
+                            <p>The same task on a top model can cost several times more than on a cheap model. Picking the right model changes your bill far more than the words in your prompt.</p>
                         </div>
                         <div class="row-item">
-                            <h3>Thinking effort is an output dial</h3>
-                            <p>Higher reasoning effort produces more thinking tokens, billed as output. Keep it at Medium unless the task genuinely needs more.</p>
+                            <h3>More thinking effort costs more</h3>
+                            <p>More thinking effort makes the model write more thinking tokens, which you pay for as output. Keep it on Medium unless the task really needs more.</p>
                         </div>
                         <div class="row-item">
                             <h3>Completions are free</h3>
-                            <p>Inline completions and next-edit suggestions do not consume usage. Let them handle routine typing, and reserve chat and Agent mode for work that needs reasoning.</p>
+                            <p>Inline code suggestions (the grey text as you type) and next-edit suggestions are free. Let them do the normal typing, and use chat and Agent mode only when you need real thinking.</p>
                         </div>
                     </div>
                     <div class="table-wrap" style="margin-top: var(--size-5);">
@@ -1184,23 +1185,23 @@
                             <tbody>
                                 <tr>
                                     <td>Light</td>
-                                    <td>1x baseline</td>
+                                    <td>Same as base (1x)</td>
                                     <td>Quick question or one-file edit: under a cent</td>
                                 </tr>
                                 <tr>
                                     <td>Mid</td>
-                                    <td>~3x the light tier</td>
-                                    <td>Scoped slice or bug fix: roughly $0.10 to $1</td>
+                                    <td>About 3x the cheap tier</td>
+                                    <td>Small task or bug fix: about $0.10 to $1</td>
                                 </tr>
                                 <tr>
                                     <td>Frontier</td>
-                                    <td>~5x on rate, more per task</td>
-                                    <td>Planning or multi-file agent task: ~$1 to $5+; long unscoped session: $5 to $15+</td>
+                                    <td>About 5x the rate, more per task</td>
+                                    <td>Planning or many-file task: about $1 to $5+. Long, messy chat: $5 to $15+</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    <p class="footer-note footer-note-full-width" style="border-top: 0; margin-top: var(--size-3); padding-top: 0;">Relative and per-task figures are intuition, not invoices. Real per-task cost depends on context size, session length, and how many turns the model takes, so a frontier model on a bloated context can cost far more than the rate ratio alone suggests. Current per-token rates for each tier are in the rate card below.</p>
+                    <p class="footer-note footer-note-full-width" style="border-top: 0; margin-top: var(--size-3); padding-top: 0;">These numbers are a rough guide, not a real bill. Real cost depends on how much context you send, how long the chat is, and how many steps the model takes. A top model with too much context can cost far more than the simple ratio suggests. The exact rates are in the rate card below.</p>
                     <div class="callout rate-card">
                         <p><strong>Rate card &mdash; per 1M tokens, input / output.</strong> Update on each model release.</p>
                         <table class="rate-card-table">
@@ -1254,25 +1255,25 @@
                         <p><strong>Caching rewards staying put:</strong> context re-sent within one session is cached at up to 90% off, but restarting mid-task throws that saving away. So the rule is: a fresh chat for a new task, but keep the context stable within a single task.</p>
                     </div>
                     <div class="callout callout-full-width" style="border-left-color: var(--warning); background: rgba(210, 153, 34, 0.1);">
-                        <p><strong>Most context is stale weight:</strong> in a typical task, much of the input is failed attempts, verbose tool output, and file dumps from many turns ago, all re-billed every turn. Trimming to the files that actually matter is the single biggest lever you personally control.</p>
+                        <p><strong>Old context is dead weight:</strong> in most tasks, a lot of the input is failed tries, long tool output, and files from many messages ago, all paid for again every message. Cutting this down to the files that matter is the biggest thing you can control yourself.</p>
                     </div>
                     <div class="panel-grid" style="margin-top: var(--size-5);">
                         <div class="panel">
                             <h3>See your own spend</h3>
                             <ul>
-                                <li>Open the Copilot status dashboard from the VS Code status bar for your monthly usage.</li>
-                                <li>Check the session-level cost readout after a chat or agent run.</li>
-                                <li>Use the Agent Debug Logs: the Summary view shows token counts, and Cache Explorer shows your cache hit rate.</li>
-                                <li>See the per-developer breakdown under GitHub settings, then billing, then Copilot.</li>
+                                <li>Open the Copilot status panel from the VS Code status bar to see your monthly usage.</li>
+                                <li>Check the cost shown after a chat or agent run.</li>
+                                <li>Open the Agent Debug Logs: the Summary shows token counts, and Cache Explorer shows how often the cache is reused.</li>
+                                <li>See the per-person breakdown in GitHub settings, then billing, then Copilot.</li>
                             </ul>
                         </div>
                         <div class="panel">
                             <h3>Cheapest habits, ranked</h3>
                             <ul>
-                                <li>Let inline completions handle routine typing.</li>
-                                <li>Match the model to the task; do not default to frontier.</li>
+                                <li>Let inline suggestions do the normal typing.</li>
+                                <li>Pick the right model for the task. Do not always use a top model.</li>
                                 <li>Attach 3 to 5 relevant files, not the whole repo.</li>
-                                <li>Start a fresh chat per task; keep context stable within a task.</li>
+                                <li>Start a new chat for each task. Keep the same context inside one task.</li>
                                 <li>Keep thinking effort at Medium unless the task needs more.</li>
                             </ul>
                         </div>
@@ -1282,7 +1283,7 @@
                 <section class="section" id="models">
                     <div class="section-head">
                         <h2>Which model to use</h2>
-                        <p>These are the only models enabled in our Copilot. Match the model to the job: start on the cheapest tier that can do the task well, and escalate only when the work genuinely needs more reasoning. Per-tier rates are in the rate card above.</p>
+                        <p>These are the only models turned on in our Copilot. Pick the model that fits the job: start with the cheapest one that can do it well, and move up only when the task really needs more thinking. Rates for each tier are in the rate card above.</p>
                     </div>
                     <div class="table-wrap">
                         <table>
@@ -1298,117 +1299,117 @@
                                 <tr>
                                     <td>MAI Code 1 Flash</td>
                                     <td>Light</td>
-                                    <td>Fast, well-defined coding: quick edits, boilerplate, mechanical refactors, high-volume execution where speed matters.</td>
-                                    <td>Cheapest option and code-focused. Reach here first for simple, clearly-specified coding work.</td>
+                                    <td>Fast, clear coding: quick edits, boilerplate, simple refactors, and lots of small tasks where speed matters.</td>
+                                    <td>Cheapest model, made for code. Try this first for simple, clear coding tasks.</td>
                                 </tr>
                                 <tr>
                                     <td>Haiku 4.5</td>
                                     <td>Light</td>
-                                    <td>Quick non-code edits, routine test generation, lookups, "explain this function", commit messages, and any well-scoped single-file slice.</td>
-                                    <td>Cheap general-purpose executor and best value per unit of quality. The default for clear, local work that is not purely code-shaped.</td>
+                                    <td>Quick non-code edits, simple tests, lookups, "explain this function", commit messages, and small single-file tasks.</td>
+                                    <td>Cheap all-round model with great value. Use it by default for clear, small work that is not only code.</td>
                                 </tr>
                                 <tr>
                                     <td>GPT 5.3-Codex</td>
                                     <td>Mid</td>
-                                    <td>Code-heavy execution: large mechanical refactors, code generation across several files, Codex-style agentic loops.</td>
-                                    <td>Code-specialized and currently cheaper than Sonnet 5 on both input and output. Pick it over Sonnet when the task is heavily code-shaped rather than reasoning-shaped. See the evaluation note below.</td>
+                                    <td>Heavy coding: big refactors, writing code across several files, and code-focused agent loops.</td>
+                                    <td>Made for code, and right now cheaper than Sonnet 5 for both input and output. Choose it over Sonnet when the task is mostly code, not deep thinking. See the note below.</td>
                                 </tr>
                                 <tr>
                                     <td>Sonnet 5</td>
                                     <td>Mid</td>
-                                    <td>Most day-to-day execution with real reasoning: multi-file changes with coherence to hold, moderate ambiguity, or tasks that need more judgment than the light tier gives.</td>
-                                    <td>The general-purpose workhorse when a task is not obviously light and not purely code-shaped. Reserve it for work that uses the extra reasoning.</td>
+                                    <td>Most daily work that needs real thinking: changes across files, some unclear parts, or tasks that need more judgment than the cheap models give.</td>
+                                    <td>The main all-round model when a task is not clearly simple and not only code. Use it when the extra thinking helps.</td>
                                 </tr>
                                 <tr>
                                     <td>Opus 4.8</td>
                                     <td>Frontier</td>
-                                    <td>Hard planning and architecture, gnarly cross-file debugging, high-risk refactors, and repo-scale software engineering where a subtle error is costly.</td>
-                                    <td>The strongest model available to all teams and the frontier escalation target for planning passes and the hardest slices. Use deliberately, not as a default.</td>
+                                    <td>Hard planning and design, tricky bugs across files, risky refactors, and big changes where a small mistake is costly.</td>
+                                    <td>The strongest model everyone can use. Use it for planning and the hardest tasks. Use it on purpose, not by default.</td>
                                 </tr>
                                 <tr>
                                     <td>Fable 5</td>
                                     <td>Frontier+</td>
-                                    <td>Only the genuinely hardest, longest, most multi-file work, where its lead compounds: large migrations, deep multi-step reasoning, complex architecture.</td>
-                                    <td>The most capable option and the most expensive, at roughly double Opus on output. Enabled for specific teams only. See the caveats below before using it.</td>
+                                    <td>Only the hardest, longest, many-file work: big migrations, deep step-by-step thinking, and complex design.</td>
+                                    <td>The most powerful model and the most expensive, about twice Opus for output. Only some teams can use it. Read the warnings below first.</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <div class="callout" style="border-left-color: var(--warning); background: rgba(210, 153, 34, 0.1);">
-                        <p><strong>Before reaching for Fable 5:</strong> it costs about twice Opus 4.8 per output token, so use it only where the extra capability clearly earns that premium, not as a default. It also runs a safety classifier that can silently reroute some sensitive requests to a weaker model, and it carries a longer data-retention requirement, so treat it with the same data-safety caution as everything else and keep PII and secrets out of it.</p>
+                        <p><strong>Before you use Fable 5:</strong> it costs about twice Opus 4.8 for output, so use it only when the extra power is clearly worth it, not by default. It also has a safety filter that can quietly send some sensitive requests to a weaker model, and it keeps your data longer. Treat it with the same care as everything else, and keep private data and secrets out of it.</p>
                     </div>
                     <div class="callout">
-                        <p><strong>The default ladder:</strong> reach for MAI Code 1 Flash or Haiku 4.5 first for scoped execution, step up to GPT 5.3-Codex for code-heavy work or Sonnet 5 when the task has real ambiguity or cross-file coherence, and escalate to Opus 4.8 (or Fable 5 on approved teams) only for planning passes and the hardest slices. If a cheap model fails the same task two or three times, that is the signal to step up, not to keep retrying.</p>
+                        <p><strong>The default order:</strong> start with MAI Code 1 Flash or Haiku 4.5 for small tasks. Move up to GPT 5.3-Codex for heavy coding, or Sonnet 5 when the task is unclear or spans many files. Use Opus 4.8 (or Fable 5 on approved teams) only for planning and the hardest tasks. If a cheap model fails the same task two or three times, move up instead of trying again and again.</p>
                     </div>
                     <div class="callout" style="border-left-color: var(--accent); background: rgba(88, 166, 255, 0.08);">
-                        <p><strong>Availability by team:</strong> Fable 5 is enabled for specific teams only. Everyone has Opus 4.8, Haiku 4.5, Sonnet 5, GPT 5.3-Codex, and MAI Code 1 Flash. Opus 4.8 is the frontier escalation target for all teams, and Sonnet 5 (or GPT 5.3-Codex for code-heavy work) is your everyday default.</p>
+                        <p><strong>Who can use what:</strong> only some teams can use Fable 5. Everyone can use Opus 4.8, Haiku 4.5, Sonnet 5, GPT 5.3-Codex, and MAI Code 1 Flash. For all teams, Opus 4.8 is the top model to move up to, and Sonnet 5 (or GPT 5.3-Codex for heavy coding) is your everyday choice.</p>
                     </div>
                     <div class="callout" style="border-left-color: var(--accent); background: rgba(88, 166, 255, 0.08);">
-                        <p><strong>Under evaluation, GPT 5.3-Codex as a coding default:</strong> Codex is currently cheaper than Sonnet 5 on both input and output, and it is code-tuned, so for heavily code-shaped work it may be the better cost-and-quality pick rather than just a mid alternative. We are testing whether it can carry a chunk of everyday coding volume in place of Sonnet 5. Until that is confirmed, treat Sonnet 5 as the default and reach for Codex on code-heavy tasks; if you use it, note how it compares so we can decide.</p>
+                        <p><strong>We are testing GPT 5.3-Codex as a main coding model:</strong> right now Codex is cheaper than Sonnet 5 for both input and output, and it is made for code. So for heavy coding it may be better for both cost and quality, not just a backup. We are checking if it can do a lot of our daily coding instead of Sonnet 5. For now, use Sonnet 5 by default and use Codex for heavy coding. If you use it, tell us how it compares so we can decide.</p>
                     </div>
-                    <p class="footer-note" style="margin-top: var(--size-4);"><strong>Maintainers:</strong> specific model names and rates live in exactly two places, this table and the rate card in the Tokenomics section. When a model is added, removed, repriced, or its team availability changes, update both, then bump the version stamp at the top of the page. Nothing else in the guide hard-codes a model name, so those two spots are all you need to touch.</p>
+                    <p class="footer-note" style="margin-top: var(--size-4);"><strong>Maintainers:</strong> model names and rates are in only two places, this table and the rate card in the Tokenomics section. When a model changes (added, removed, new price, or new team access), update both, then change the version number at the top. No other part of the guide lists a model name, so these two spots are all you need to update.</p>
                 </section>
 
                 <section class="section" id="workflow">
                     <div class="section-head">
                         <h2>Default workflow</h2>
-                        <p>The workflow is intentionally staged. Brainstorm first, plan second, execute third, review fourth, and manually verify at the end.</p>
+                        <p>The steps are in this order on purpose: brainstorm first, plan second, do the work third, review fourth, and check it yourself at the end.</p>
                     </div>
                     <ol class="timeline">
                         <li class="timeline-step" data-step="1">
                             <h3>Brainstorm the shape of the solution</h3>
-                            <p>Use AI to compare viable options and surface trade-offs. Stop once the direction is clear.</p>
+                            <p>Use AI to compare good options and show the trade-offs. Stop once the direction is clear.</p>
                             <ul>
                                 <li>Ask for 2 or 3 approaches, not code.</li>
-                                <li>Ask clarifying questions only if the answer would materially change the implementation.</li>
-                                <li>Prefer the simplest acceptable option for the repository.</li>
+                                <li>Ask questions only if the answer would really change the work.</li>
+                                <li>Pick the simplest option that works for the repo.</li>
                             </ul>
                         </li>
                         <li class="timeline-step" data-step="2">
                             <h3>Create <span class="inline-code">plan.md</span></h3>
-                            <p>Use a planner model only when the task is complex enough to justify a written plan artifact. In GitHub Copilot for VS Code, do this as a planning pass in chat before you ask Agent mode to change files.</p>
+                            <p>Use a planner model only when the task is big enough to need a written plan. In GitHub Copilot for VS Code, do this in chat first, before you let Agent mode change files.</p>
                             <ul>
-                                <li>Document scope, assumptions, non-goals, ordered tasks, validation, and rollback notes.</li>
-                                <li>Break work into commit-sized slices.</li>
-                                <li>Keep the planning pass read-only until the target files and validation steps are explicit.</li>
-                                <li>Keep the plan small enough that each task can be validated independently.</li>
+                                <li>Write down the scope, assumptions, what is out of scope, the tasks in order, how to test, and how to undo.</li>
+                                <li>Split the work into small pieces, each the size of one commit.</li>
+                                <li>Do not change files during planning until the target files and test steps are clear.</li>
+                                <li>Keep each task small enough to test on its own.</li>
                             </ul>
                         </li>
                         <li class="timeline-step" data-step="3">
                             <h3>Execute with a lower-cost model</h3>
-                            <p>Switch to Agent mode only after the current plan slice is concrete. Give the executor only the current slice and the files needed for that slice.</p>
+                            <p>Switch to Agent mode only when the current step is clear. Give the model only the current step and the files it needs.</p>
                             <ul>
                                 <li>Follow <span class="inline-code">plan.md</span> and <span class="inline-code">progress.md</span>.</li>
                                 <li>Create <span class="inline-code">progress.md</span> if it does not exist.</li>
-                                <li>Attach the exact files with <span class="inline-code">#file</span>, <span class="inline-code">@file</span>, <span class="inline-code">#editor</span>, or the <span class="inline-code">+</span> attachment button, then name the functions or components you expect the agent to touch.</li>
-                                <li>Do not widen scope without updating the plan.</li>
+                                <li>Attach the exact files with <span class="inline-code">#file</span>, <span class="inline-code">@file</span>, <span class="inline-code">#editor</span>, or the <span class="inline-code">+</span> button, then name the functions or parts you expect the agent to change.</li>
+                                <li>Do not add more work without updating the plan.</li>
                             </ul>
                         </li>
                         <li class="timeline-step" data-step="4">
                             <h3>Validate and checkpoint after every task</h3>
-                            <p>Each finished task needs its own state update and repo checkpoint.</p>
+                            <p>Each finished task needs its own progress update and a save point in git.</p>
                             <ul>
                                 <li>Update <span class="inline-code">progress.md</span>.</li>
-                                <li>Run formatting, linting, and building if the project provides them.</li>
-                                <li>Commit with the git CLI before moving to the next slice.</li>
+                                <li>Run formatting, linting, and build if the project has them.</li>
+                                <li>Commit with git before moving to the next step.</li>
                             </ul>
                         </li>
                         <li class="timeline-step" data-step="5">
                             <h3>Review only at the right cost tier</h3>
-                            <p>Complex work gets a model or human reviewer. Simple work gets human review only.</p>
+                            <p>Hard work gets a review by a model or a person. Simple work just needs a person to review it.</p>
                             <ul>
-                                <li>Review against <span class="inline-code">plan.md</span>, not memory.</li>
-                                <li>Focus on correctness, regressions, edge cases, and validation quality.</li>
-                                <li>Do not pay for premium review on trivial work.</li>
+                                <li>Review against <span class="inline-code">plan.md</span>, not from memory.</li>
+                                <li>Check for correct results, broken features, edge cases, and good testing.</li>
+                                <li>Do not pay for an expensive review on small work.</li>
                             </ul>
                         </li>
                         <li class="timeline-step" data-step="6">
                             <h3>Manually test and verify</h3>
-                            <p>Human verification is the actual completion gate.</p>
+                            <p>You checking the result yourself is the real finish line.</p>
                             <ul>
-                                <li>The agent saying done is not completion.</li>
-                                <li>Verify intended behavior manually.</li>
-                                <li>Close the task only after the result is confirmed.</li>
+                                <li>The agent saying done does not mean it is done.</li>
+                                <li>Check that it works the way you wanted, by hand.</li>
+                                <li>Close the task only after you confirm the result.</li>
                             </ul>
                         </li>
                     </ol>
@@ -1417,95 +1418,95 @@
                 <section class="section" id="rules">
                     <div class="section-head">
                         <h2>Rules and governance</h2>
-                        <p>These rules reduce both token waste and quality drift. They should be followed mechanically, not selectively.</p>
+                        <p>These rules cut wasted cost and keep quality up. Follow all of them every time, not just when you feel like it.</p>
                     </div>
                     <div class="panel-grid">
                         <div class="panel">
                             <h3>Always</h3>
                             <ul>
-                                <li>Decide if the task deserves an agent before opening a session.</li>
-                                <li>Start with brainstorming, then produce a detailed plan, then implement.</li>
-                                <li>Discuss solution options with a team member first when the problem is unclear, the same way human developers have always worked, instead of reaching for a model as the first place to think.</li>
-                                <li>Use explicit constraints and a short DO NOT list.</li>
-                                <li>Bring only relevant files, examples, and commands into context.</li>
+                                <li>Decide if the task needs an agent before you start one.</li>
+                                <li>Start by brainstorming, then write a clear plan, then build it.</li>
+                                <li>When the problem is unclear, talk it over with a teammate first, the way developers always have, instead of using a model as your first way to think.</li>
+                                <li>Give clear rules and a short do-not list.</li>
+                                <li>Add only the files, examples, and commands that matter.</li>
                                 <li>Update <span class="inline-code">progress.md</span> after each completed task.</li>
-                                <li>Re-evaluate whether the plan is complete before moving on.</li>
+                                <li>Check that the plan is finished before you move on.</li>
                             </ul>
                         </div>
                         <div class="panel">
                             <h3>Never</h3>
                             <ul>
                                 <li>Share PII, secrets, credentials, or real customer data with a model.</li>
-                                <li>Use a frontier planner or reviewer for trivial fixes.</li>
-                                <li>Paste the whole repository or long irrelevant history into the prompt.</li>
-                                <li>Continue a stale conversation for unrelated work.</li>
-                                <li>Let one model output automatically trigger another without a review checkpoint.</li>
-                                <li>Mark work complete before validation, commit, and manual verification.</li>
+                                <li>Use a top model to plan or review small fixes.</li>
+                                <li>Paste the whole repo or long, unrelated history into the prompt.</li>
+                                <li>Keep using an old chat for new, unrelated work.</li>
+                                <li>Let one model's answer feed another model without you checking it.</li>
+                                <li>Mark work done before you test it, commit it, and check it yourself.</li>
                             </ul>
                         </div>
                         <div class="panel">
                             <h3>Required artifacts</h3>
                             <ul>
-                                <li><span class="inline-code">plan.md</span>: objective, scope, non-goals, ordered tasks, validation, risks.</li>
-                                <li><span class="inline-code">progress.md</span>: completed tasks, pending tasks, last validation result, blockers, next step.</li>
-                                <li>One checkpoint commit per completed slice or logical task.</li>
+                                <li><span class="inline-code">plan.md</span>: goal, scope, what is out of scope, tasks in order, how to test, and risks.</li>
+                                <li><span class="inline-code">progress.md</span>: done tasks, tasks left, last test result, blockers, and the next step.</li>
+                                <li>One save-point commit for each finished piece or task.</li>
                             </ul>
                         </div>
                         <div class="panel">
-                            <h3>Spend premium budget on</h3>
+                            <h3>Use a top model for</h3>
                             <ul>
-                                <li>Architecture and sequencing decisions that are genuinely ambiguous.</li>
-                                <li>Cross-file reasoning with meaningful integration risk.</li>
-                                <li>High-risk refactors and subtle debugging.</li>
-                                <li>Second-pass review only when the cost of defects is high.</li>
+                                <li>Design and ordering choices that are truly unclear.</li>
+                                <li>Work across files where the parts could break each other.</li>
+                                <li>Risky refactors and hard-to-find bugs.</li>
+                                <li>A second review only when a bug would be costly.</li>
                             </ul>
                         </div>
                     </div>
                     <div class="callout callout-full-width" style="border-left-color: var(--warning); background: rgba(210, 153, 34, 0.1);">
-                        <p><strong>Cost tip:</strong> a lightweight model is the most cost-effective choice for routine execution and scoped reasoning, since token cost scales with the model and the context you send. For real solution-finding, talk through the problem with a teammate first when needed, then use models to accelerate execution or review instead of outsourcing the initial engineering judgment to the frontier model (Opus 4.8, or Fable 5 on approved teams).</p>
+                        <p><strong>Cost tip:</strong> a cheap model is the best value for normal work and small thinking tasks, since cost depends on the model and the context you send. To really solve a hard problem, talk it over with a teammate first, then use models to speed up the work or the review. Do not hand the first, hardest thinking to a top model (Opus 4.8, or Fable 5 on approved teams).</p>
                     </div>
                 </section>
 
                 <section class="section" id="copilot-vscode">
                     <div class="section-head">
                         <h2>GitHub Copilot in VS Code</h2>
-                        <p>Use Copilot features deliberately. Do planning in chat first, then switch to Agent mode only when the work is concrete enough to execute and validate.</p>
+                        <p>Use Copilot on purpose. Plan in chat first, then switch to Agent mode only when the work is clear enough to build and test.</p>
                     </div>
                     <figure class="doc-figure">
                         <img src="assets/copilot.png" alt="GitHub Copilot mode picker in VS Code showing Agent selected, with Ask and Plan listed as alternatives.">
-                        <figcaption>Select the mode intentionally: use <span class="inline-code">Plan</span> when you need sequencing, scope, or a written plan first, and use <span class="inline-code">Agent</span> when the current slice is concrete enough to edit and validate. The screenshot-style example mirrors the VS Code mode picker so readers can recognize where that choice happens.</figcaption>
+                        <figcaption>Pick the mode on purpose: use <span class="inline-code">Plan</span> when you need order, scope, or a written plan first, and use <span class="inline-code">Agent</span> when the current step is clear enough to edit and test. This picture matches the VS Code mode picker so you can find where to choose.</figcaption>
                     </figure>
                     <div class="panel-grid">
                         <div class="panel">
                             <h3>Use a planning pass when</h3>
                             <ul>
-                                <li>You need scope, sequencing, trade-offs, or a plan artifact such as <span class="inline-code">plan.md</span>.</li>
-                                <li>You are still deciding which files, functions, or components should change.</li>
-                                <li>You want risks, validation steps, or rollback notes before any edits happen.</li>
+                                <li>You need scope, order, trade-offs, or a written plan like <span class="inline-code">plan.md</span>.</li>
+                                <li>You are still deciding which files or parts should change.</li>
+                                <li>You want risks, test steps, or undo notes before any edits.</li>
                             </ul>
                         </div>
                         <div class="panel">
                             <h3>Use Agent mode when</h3>
                             <ul>
-                                <li>The current slice is already chosen and small enough to validate on its own.</li>
-                                <li>You can point Copilot at the exact files and symbols that should be touched.</li>
-                                <li>You want Copilot to edit code and run a narrow validation step for that slice.</li>
+                                <li>The current step is chosen and small enough to test on its own.</li>
+                                <li>You can point Copilot at the exact files and parts to change.</li>
+                                <li>You want Copilot to edit code and run a small test for that step.</li>
                             </ul>
                         </div>
                         <div class="panel">
                             <h3>Attach files with <span class="inline-code">#</span> or <span class="inline-code">@</span></h3>
                             <ul>
                                 <li>Type <span class="inline-code">#</span> or <span class="inline-code">@</span> followed by a filename such as <span class="inline-code">#index.html</span> or <span class="inline-code">@authService.py</span>.</li>
-                                <li>Use the autocomplete dropdown to select the correct file from the workspace.</li>
-                                <li>Attach only the target file and one nearby related file when the change is local.</li>
+                                <li>Use the dropdown to pick the right file from the workspace.</li>
+                                <li>Attach only the main file and one related file when the change is small.</li>
                             </ul>
                         </div>
                         <div class="panel">
                             <h3>Use the built-in attach tools</h3>
                             <ul>
-                                <li>Click the <span class="inline-code">+</span> Add Attachment button beside the chat box to browse and attach files visually.</li>
-                                <li>Type <span class="inline-code">#editor</span> to force Copilot to read the file currently open in the active editor.</li>
-                                <li>After attaching files, name the target functions, components, or commands and keep the chat scoped to the current slice.</li>
+                                <li>Click the <span class="inline-code">+</span> Add Attachment button next to the chat box to find and attach files.</li>
+                                <li>Type <span class="inline-code">#editor</span> to make Copilot read the file open in your editor now.</li>
+                                <li>After attaching files, name the functions, parts, or commands, and keep the chat only about the current step.</li>
                             </ul>
                         </div>
                     </div>
@@ -1513,14 +1514,14 @@
                         <p><strong>Quick context shortcuts:</strong> use <span class="inline-code">#index.html</span> or <span class="inline-code">@index.html</span> to attach a specific file, use <span class="inline-code">#editor</span> for the current tab, and use the <span class="inline-code">+</span> button when you want to browse attachments visually.</p>
                     </div>
                     <div class="callout" style="border-left-color: var(--success); background: rgba(63, 185, 80, 0.08);">
-                        <p><strong>Completions are free:</strong> inline code completions and next-edit suggestions are included with your seat and do not consume usage. Lean on them for routine typing, and save chat and Agent mode for work that actually needs reasoning.</p>
+                        <p><strong>Completions are free:</strong> inline code suggestions and next-edit suggestions come with your seat and do not cost usage. Use them for normal typing, and save chat and Agent mode for work that needs real thinking.</p>
                     </div>
                 </section>
 
                 <section class="section" id="templates">
                     <div class="section-head">
                         <h2>Prompt and context strategy</h2>
-                        <p>Use short structured prompts with narrow context packets. The goal is not the longest prompt. The goal is the smallest prompt that tells the model exactly what job it has.</p>
+                        <p>Use short, clear prompts with only the context you need. The goal is not the longest prompt. It is the shortest prompt that tells the model exactly what to do.</p>
                     </div>
                     <div class="badge-row">
                         <span class="badge success">Relevant files only</span>
@@ -1528,10 +1529,10 @@
                         <span class="badge danger">Restart stale sessions</span>
                     </div>
                     <div class="callout callout-full-width">
-                        <p><strong>Context packet checklist:</strong> task objective, the 3 to 5 relevant files attached with <span class="inline-code">#file</span>, <span class="inline-code">@file</span>, <span class="inline-code">#editor</span>, or the <span class="inline-code">+</span> button, the exact functions or components if known, explicit constraints, one or two examples to mimic, and the expected validation step.</p>
+                        <p><strong>Context checklist:</strong> the goal of the task, the 3 to 5 files you need (attached with <span class="inline-code">#file</span>, <span class="inline-code">@file</span>, <span class="inline-code">#editor</span>, or the <span class="inline-code">+</span> button), the exact functions or parts if you know them, clear rules, one or two examples to copy, and how to test it.</p>
                     </div>
                     <div class="callout callout-full-width" style="border-left-color: var(--warning); background: rgba(210, 153, 34, 0.1);">
-                        <p><strong>Thinking Effort Guidelines:</strong> Configure thinking effort to <strong>Medium</strong> by default for routine execution. Elevate to <strong>High</strong> or <strong>Extra High</strong> for complex planning, architectural design, or critical reviews. Higher effort produces more reasoning tokens, which cost more, so treat it as a dial rather than a default.</p>
+                        <p><strong>Thinking effort:</strong> set thinking effort to <strong>Medium</strong> by default for normal work. Raise it to <strong>High</strong> or <strong>Extra High</strong> for hard planning, design, or important reviews. More effort makes more thinking tokens, which cost more, so change it only when needed.</p>
                     </div>
                     <div class="template-grid" style="margin-top: var(--size-5);">
                         <div class="template" id="template-brainstorm">
@@ -1543,7 +1544,7 @@
                                     <span class="btn-text">Copy</span>
                                 </button>
                             </div>
-                            <p>Use this only to shape the solution. Do not ask for implementation yet.</p>
+                            <p>Use this only to plan the idea. Do not ask for code yet.</p>
                             <pre><code id="template-brainstorm-code">I want to solve [problem].
 
 Relevant files (if known):
@@ -1570,7 +1571,7 @@ Keep it concise. Do not implement anything yet.</code></pre>
                                     <span class="btn-text">Copy</span>
                                 </button>
                             </div>
-                            <p>Use this when the task is complex enough to justify a written plan artifact.</p>
+                            <p>Use this when the task is big enough to need a written plan.</p>
                             <pre><code id="template-planner-code">Create plan.md for [goal].
 
 Relevant files:
@@ -1604,7 +1605,7 @@ Constraints:
                                     <span class="btn-text">Copy</span>
                                 </button>
                             </div>
-                            <p>This matches the operating workflow and keeps the executor on a narrow slice.</p>
+                            <p>This follows our workflow and keeps the model on one small step.</p>
                                                         <pre><code id="template-executor-code">Please implement according to plan.md as follows.
 
 Current slice:
@@ -1645,7 +1646,7 @@ Constraints:
                                     <span class="btn-text">Copy</span>
                                 </button>
                             </div>
-                            <p>Use this only for complex reviews. For simple work, review manually.</p>
+                            <p>Use this only for hard reviews. For simple work, review it yourself.</p>
                             <pre><code id="template-reviewer-code">Review the completed work against plan.md and progress.md.
 
 Focus on:
@@ -1663,7 +1664,7 @@ Rate issues by severity.</code></pre>
                 <section class="section" id="consequences">
                     <div class="section-head">
                         <h2>Consequences and enforcement</h2>
-                        <p>The consequence should be immediate and operational. The point is to stop waste and drift as soon as they appear.</p>
+                        <p>Act on the problem right away. The goal is to stop waste and mistakes as soon as they show up.</p>
                     </div>
                     <div class="table-wrap">
                         <table>
@@ -1677,47 +1678,47 @@ Rate issues by severity.</code></pre>
                             <tbody>
                                 <tr>
                                     <td>Sensitive data shared with a model</td>
-                                    <td>PII, secrets, credentials, or customer data must never leave our control.</td>
-                                    <td>Stop immediately, report it, and rotate any exposed credentials.</td>
+                                    <td>Private data, secrets, passwords, or customer data must never leave our control.</td>
+                                    <td>Stop now, report it, and change any exposed passwords or keys.</td>
                                 </tr>
                                 <tr>
-                                    <td>Agent used for a trivial task</td>
-                                    <td>Spends tokens where extra reasoning help is not needed.</td>
-                                    <td>Stop the session, finish manually, and tighten the manual-first threshold using that example.</td>
+                                    <td>Agent used for a tiny task</td>
+                                    <td>Wastes tokens where extra thinking is not needed.</td>
+                                    <td>Stop the session, finish by hand, and use that case to draw a clearer line for what to do by hand.</td>
                                 </tr>
                                 <tr>
                                     <td>No <span class="inline-code">plan.md</span> for a complex task</td>
-                                    <td>Execution drifts, context grows, and cost compounds.</td>
-                                    <td>Freeze implementation until a scoped plan exists.</td>
+                                    <td>The work goes off track, context grows, and cost keeps rising.</td>
+                                    <td>Stop building until a clear plan exists.</td>
                                 </tr>
                                 <tr>
-                                    <td>Executor receives oversized or irrelevant context</td>
-                                    <td>Higher token cost and lower accuracy.</td>
-                                    <td>Restart with a trimmed context packet and a fresh chat.</td>
+                                    <td>The model gets too much or unrelated context</td>
+                                    <td>Higher cost and lower accuracy.</td>
+                                    <td>Start again with less context and a new chat.</td>
                                 </tr>
                                 <tr>
-                                    <td>Premium model used for routine execution</td>
-                                    <td>Planner pricing is being spent on executor work.</td>
-                                    <td>Downgrade the execution model immediately and require justification for future premium use.</td>
+                                    <td>A top model used for normal work</td>
+                                    <td>You are paying top-model prices for basic work.</td>
+                                    <td>Switch to a cheaper model now, and require a reason before using a top model again.</td>
                                 </tr>
                                 <tr>
                                     <td>No update to <span class="inline-code">progress.md</span> after a task</td>
-                                    <td>There is no durable handoff state.</td>
+                                    <td>There is no saved state to hand off.</td>
                                     <td>Do not start the next task until progress is recorded.</td>
                                 </tr>
                                 <tr>
                                     <td>No validation or checkpoint commit</td>
-                                    <td>Errors spread and task history becomes hard to recover.</td>
-                                    <td>Block completion until validation runs and the checkpoint commit exists.</td>
+                                    <td>Errors spread and the history gets hard to recover.</td>
+                                    <td>Do not mark it done until tests run and a save-point commit exists.</td>
                                 </tr>
                                 <tr>
                                     <td>No review on complex work</td>
-                                    <td>High-risk defects escape the first pass.</td>
-                                    <td>Run reviewer pass or human deep review before acceptance.</td>
+                                    <td>Serious bugs slip through the first check.</td>
+                                    <td>Do a review pass or a careful human review before accepting.</td>
                                 </tr>
                                 <tr>
-                                    <td>No manual verification at the end</td>
-                                    <td>The tool is being trusted more than the engineer.</td>
+                                    <td>No self-check at the end</td>
+                                    <td>You are trusting the tool more than yourself.</td>
                                     <td>The change is not complete.</td>
                                 </tr>
                             </tbody>
@@ -1728,25 +1729,25 @@ Rate issues by severity.</code></pre>
                 <section class="section" id="completion">
                     <div class="section-head">
                         <h2>Completion gate</h2>
-                        <p>Completion is a sequence, not a feeling. Every complex task should leave behind proof that the workflow was followed.</p>
+                        <p>Finishing is a set of steps, not a feeling. Every hard task should leave proof that the steps were followed.</p>
                     </div>
                     <div class="closing-grid">
                         <div class="panel">
                             <h3>Required before closing</h3>
                             <ul>
-                                <li><span class="inline-code">progress.md</span> reflects the real state of the plan.</li>
-                                <li>Validation commands have been run if the repo provides them.</li>
-                                <li>The current slice has a checkpoint commit.</li>
-                                <li>Review has happened at the appropriate cost tier.</li>
-                                <li>The result has been manually tested and verified.</li>
+                                <li><span class="inline-code">progress.md</span> shows the real state of the plan.</li>
+                                <li>You ran the test commands if the repo has them.</li>
+                                <li>The current step has a save-point commit.</li>
+                                <li>The work was reviewed at the right cost level.</li>
+                                <li>You tested and checked the result yourself.</li>
                             </ul>
                         </div>
                         <div class="panel">
                             <h3>Working rule</h3>
-                            <p>The agent can accelerate drafting, planning, and execution, but it does not change ownership. The engineer is still responsible for scope, correctness, and budget discipline.</p>
+                            <p>The agent can speed up writing, planning, and building, but it does not take over ownership. You are still responsible for scope, correctness, and cost.</p>
                         </div>
                     </div>
-                    <p class="footer-note footer-note-full-width">This page is intentionally strict because the budget signal is already visible. Efficient agent use is not about maximizing model time. It is about spending model time only where it creates much more value for the engineering work.</p>
+                    <p class="footer-note footer-note-full-width">This guide is strict on purpose, because the cost is now easy to see. Using agents well is not about using the model as much as possible. It is about using it only where it adds real value to the work.</p>
                 </section>
             </article>
         </main>
