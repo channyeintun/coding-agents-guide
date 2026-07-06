@@ -643,6 +643,40 @@
             color: var(--text-strong);
         }
 
+        .tldr-card {
+            background: var(--surface, #161b22);
+            border: 1px solid var(--line-soft);
+            border-left: 3px solid var(--accent);
+            border-radius: 8px;
+            padding: var(--size-4) var(--size-5);
+            margin: 0 0 var(--size-6) 0;
+        }
+        .tldr-card .tldr-title {
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            margin: 0 0 var(--size-2) 0;
+        }
+        .tldr-card ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .tldr-card ul li {
+            padding: 0.32rem 0;
+            font-size: 0.92rem;
+            color: var(--text-main);
+            border-top: 1px solid var(--line-soft);
+        }
+        .tldr-card ul li:first-child {
+            border-top: 0;
+        }
+        .tldr-card ul li strong {
+            color: var(--text-strong, #fff);
+        }
+
         .rate-card-table {
             width: 100%;
             border-collapse: collapse;
@@ -1006,7 +1040,18 @@
                     <p class="eyebrow">Guideline</p>
                     <h1 class="title-full-width">Optimal guide, rules and governance for efficient coding-agent workflows</h1>
                     <p class="lede lede-full-width">Use agents only when they clearly help with the thinking work. Keep everything else manual, scoped, and cheap.</p>
-                    <p class="doc-meta doc-meta-single-line"><strong>Version 1.2</strong> &nbsp;&middot;&nbsp; Last updated: 6 July 2026 &nbsp;&middot;&nbsp; Living document, reviewed at each model release.</p>
+                    <p class="doc-meta doc-meta-single-line"><strong>Version 1.3</strong> &nbsp;&middot;&nbsp; Last updated: 6 July 2026 &nbsp;&middot;&nbsp; Living document, reviewed at each model release.</p>
+                    <div class="tldr-card">
+                        <p class="tldr-title">TL;DR &mdash; the whole guide in six lines</p>
+                        <ul>
+                            <li><strong>Obvious, short, local task</strong> &rarr; do it manually. No agent.</li>
+                            <li><strong>Clear, simple slice</strong> &rarr; MAI Code 1 Flash or Haiku 4.5.</li>
+                            <li><strong>Code-heavy execution</strong> &rarr; GPT 5.3-Codex. <strong>Ambiguous or multi-file</strong> &rarr; Sonnet 5.</li>
+                            <li><strong>Planning and the hardest slices only</strong> &rarr; Opus 4.8 (Fable 5 on approved teams).</li>
+                            <li><strong>Every turn re-sends the whole conversation</strong> &rarr; fresh chat per task, attach only 3&ndash;5 relevant files.</li>
+                            <li><strong>Never</strong> share PII, secrets, credentials, or real customer data with a model.</li>
+                        </ul>
+                    </div>
                     <div class="page-summary">
                         <div class="summary-item">
                             <span class="fact-label">Budget driver</span>
@@ -1630,6 +1675,11 @@ Rate issues by severity.</code></pre>
                                 </tr>
                             </thead>
                             <tbody>
+                                <tr>
+                                    <td>Sensitive data shared with a model</td>
+                                    <td>PII, secrets, credentials, or customer data must never leave our control.</td>
+                                    <td>Stop immediately, report it, and rotate any exposed credentials.</td>
+                                </tr>
                                 <tr>
                                     <td>Agent used for a trivial task</td>
                                     <td>Spends tokens where extra reasoning help is not needed.</td>
