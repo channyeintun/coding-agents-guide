@@ -26,7 +26,10 @@
             --warning: #d29922;
             --danger: #f85149;
             --max-width: 1440px;
-            --article-width: 960px;
+            --article-width: 900px;
+            --reading-measure: 68ch;
+            --reading-measure-tight: 62ch;
+            --reading-measure-wide: var(--reading-measure);
             --radius-panel: 6px;
             --header-height: 62px;
             --sidebar-width: 290px;
@@ -281,11 +284,21 @@
             letter-spacing: -0.02em;
         }
 
+        .title-full-width {
+            width: 100%;
+            max-width: var(--reading-measure-wide);
+        }
+
         .lede {
             font-size: 1.2rem;
             color: var(--text-muted);
-            line-height: 1.5;
+            line-height: 1.65;
             margin: 0 0 var(--size-4) 0;
+            max-width: var(--reading-measure-tight);
+        }
+
+        .lede.lede-full-width {
+            max-width: var(--reading-measure-wide);
         }
 
         .doc-meta {
@@ -293,6 +306,15 @@
             color: var(--text-muted);
             margin: 0 0 var(--size-6) 0;
         }
+
+        .doc-meta-single-line {
+            white-space: nowrap;
+        }
+
+        .no-wrap {
+            white-space: nowrap;
+        }
+
         .doc-meta strong {
             color: var(--text-main);
         }
@@ -329,7 +351,8 @@
             color: var(--text-muted);
             font-size: 0.88rem;
             margin: 0;
-            line-height: 1.5;
+            line-height: 1.65;
+            max-width: 34ch;
         }
 
         /* Generic Section and Headings styling */
@@ -345,6 +368,10 @@
             margin-bottom: var(--size-5);
         }
 
+        .section-head p + p {
+            margin-top: var(--size-3);
+        }
+
         .section-head h2 {
             color: var(--text-strong);
             font-size: 1.6rem;
@@ -357,7 +384,8 @@
             color: var(--text-muted);
             font-size: 0.95rem;
             margin: 0;
-            line-height: 1.5;
+            line-height: 1.7;
+            max-width: var(--reading-measure);
         }
 
         /* List components */
@@ -380,13 +408,15 @@
             color: var(--text-strong);
             font-size: 1.1rem;
             font-weight: 600;
-            margin: 0 0 0.35rem 0;
+            margin: 0 0 0.55rem 0;
         }
 
         .row-item p {
             color: var(--text-muted);
             font-size: 0.9rem;
             margin: 0;
+            line-height: 1.7;
+            max-width: var(--reading-measure);
         }
 
         /* Tables */
@@ -427,7 +457,7 @@
             border-bottom: 1px solid var(--line);
             color: var(--text-main);
             font-size: 0.9rem;
-            line-height: 1.55;
+            line-height: 1.65;
             vertical-align: top;
         }
 
@@ -491,6 +521,12 @@
             color: var(--text-muted);
             font-size: 0.9rem;
             margin: 0;
+            line-height: 1.7;
+            max-width: var(--reading-measure);
+        }
+
+        .timeline-step p + p {
+            margin-top: var(--size-3);
         }
 
         .timeline-step ul {
@@ -498,6 +534,7 @@
             padding-left: 1.25rem;
             color: var(--text-muted);
             font-size: 0.9rem;
+            line-height: 1.65;
         }
         .timeline-step ul li {
             margin-bottom: 0.35rem;
@@ -545,8 +582,20 @@
             padding: var(--size-4) var(--size-5);
             color: var(--text-muted);
             font-size: 0.9rem;
-            line-height: 1.55;
+            line-height: 1.65;
             border-top: 1px solid var(--line);
+            max-width: var(--reading-measure);
+        }
+
+        .panel p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            max-width: var(--reading-measure);
+            margin: 0;
+        }
+
+        .panel p + p {
+            margin-top: var(--size-3);
         }
 
         .panel ul {
@@ -554,6 +603,7 @@
             padding-left: 1.25rem;
             color: var(--text-muted);
             font-size: 0.9rem;
+            line-height: 1.65;
         }
 
         .panel ul li {
@@ -577,26 +627,81 @@
             color: var(--text-main);
             font-size: 0.92rem;
             margin: 0;
-            line-height: 1.5;
+            line-height: 1.7;
+            max-width: var(--reading-measure);
+        }
+
+        .callout.callout-full-width p {
+            max-width: var(--reading-measure-wide);
+        }
+
+        .callout p + p {
+            margin-top: var(--size-3);
         }
 
         .callout strong {
             color: var(--text-strong);
         }
 
-        .rate-card ul {
-            list-style: none;
+        .rate-card-table {
+            width: 100%;
+            border-collapse: collapse;
             margin: var(--size-3) 0 var(--size-2);
-            padding: 0;
-        }
-        .rate-card ul li {
-            padding: 0.3rem 0;
-            border-top: 1px solid var(--line-soft);
             font-size: 0.9rem;
-            color: var(--text-main);
         }
-        .rate-card ul li:first-child {
-            border-top: 0;
+        .rate-card-table th {
+            text-align: left;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            font-weight: 600;
+            padding: 0 0.75rem 0.4rem;
+            border-bottom: 1px solid var(--line-soft);
+        }
+        .rate-card-table td {
+            padding: 0.4rem 0.75rem;
+            color: var(--text-main);
+            border-bottom: 1px solid var(--line-soft);
+            vertical-align: middle;
+        }
+        .rate-card-table tbody tr:last-child td {
+            border-bottom: 0;
+        }
+        .rate-card-table .tier-divider td {
+            border-top: 1px solid var(--line-soft);
+        }
+        .rate-card-table .num {
+            text-align: right;
+            font-variant-numeric: tabular-nums;
+            white-space: nowrap;
+        }
+        .tier-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            padding: 0.12rem 0.5rem;
+            border-radius: 999px;
+        }
+        .tier-tag.tier-light {
+            color: var(--success);
+            background: rgba(63, 185, 80, 0.14);
+        }
+        .tier-tag.tier-mid {
+            color: var(--accent);
+            background: rgba(88, 166, 255, 0.14);
+        }
+        .tier-tag.tier-frontier {
+            color: var(--warning);
+            background: rgba(210, 153, 34, 0.16);
+        }
+        .rate-card-flag {
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            font-style: italic;
+            white-space: nowrap;
         }
         .rate-card .rate-card-note {
             font-size: 0.8rem;
@@ -696,7 +801,8 @@
         .template p {
             color: var(--text-muted);
             font-size: 0.85rem;
-            margin: 0 0 var(--size-3) 0;
+            margin: 0 0 var(--size-4) 0;
+            line-height: 1.65;
         }
 
         pre {
@@ -742,6 +848,22 @@
             border-top: 1px solid var(--line);
             color: var(--text-muted);
             font-size: 0.88rem;
+            line-height: 1.7;
+            max-width: var(--reading-measure);
+        }
+
+        .footer-note.footer-note-full-width {
+            max-width: var(--reading-measure-wide);
+        }
+
+        .row-list,
+        .table-wrap,
+        .timeline,
+        .panel-grid,
+        .doc-figure,
+        .template-grid,
+        .closing-grid {
+            margin-top: var(--size-4);
         }
 
         /* Closing grid */
@@ -775,6 +897,18 @@
         @media (max-width: 768px) {
             .docs-shell {
                 padding: var(--size-4) var(--size-3) var(--size-7);
+            }
+
+            .lede,
+            .section-head p,
+            .row-item p,
+            .timeline-step p,
+            .callout p,
+            .panel p,
+            .footer-note,
+            .doc-figure figcaption,
+            .summary-item p {
+                max-width: none;
             }
 
             .page-summary {
@@ -835,6 +969,7 @@
                         <li class="nav-item"><a href="#principles" class="subnav-link">Operating principles</a></li>
                         <li class="nav-item"><a href="#decision" class="subnav-link">Manual vs agent decision</a></li>
                         <li class="nav-item"><a href="#tokenomics" class="subnav-link">Tokenomics for developers</a></li>
+                        <li class="nav-item"><a href="#models" class="subnav-link">Which model to use</a></li>
                     </ul>
                 </li>
                 <li class="nav-item expanded">
@@ -869,9 +1004,9 @@
             <article class="article">
                 <section class="page-intro" id="overview">
                     <p class="eyebrow">Guideline</p>
-                    <h1>Optimal guide, rules and governance for efficient coding-agent workflows</h1>
-                    <p class="lede">Use agents only when they clearly help with the thinking work. Keep everything else manual, scoped, and cheap.</p>
-                    <p class="doc-meta"><strong>Version 1.1</strong> &nbsp;&middot;&nbsp; Last updated: 5 July 2026 &nbsp;&middot;&nbsp; Living document, reviewed at each model release.</p>
+                    <h1 class="title-full-width">Optimal guide, rules and governance for efficient coding-agent workflows</h1>
+                    <p class="lede lede-full-width">Use agents only when they clearly help with the thinking work. Keep everything else manual, scoped, and cheap.</p>
+                    <p class="doc-meta doc-meta-single-line"><strong>Version 1.2</strong> &nbsp;&middot;&nbsp; Last updated: 6 July 2026 &nbsp;&middot;&nbsp; Living document, reviewed at each model release.</p>
                     <div class="page-summary">
                         <div class="summary-item">
                             <span class="fact-label">Budget driver</span>
@@ -881,7 +1016,7 @@
                         <div class="summary-item">
                             <span class="fact-label">Default route</span>
                             <strong class="fact-value">Plan in chat first, then use Agent mode only when the slice is concrete.</strong>
-                            <p>Copilot now bills by token consumption, so cost scales with context size on every turn. Favor a lightweight model for simple work and a mid-tier model (such as Sonnet 4.6 or GPT 5.4) for most execution. Escalate to a frontier model such as GPT 5.5, Opus 4.8, or GLM 5.2 only when the planning or review risk justifies the extra token spend.</p>
+                            <p>Copilot now bills by token consumption, so cost scales with context size on every turn. Favor a lightweight model for simple work and a mid-tier model (such as GPT 5.3-Codex for code-heavy work or Sonnet 5 for general reasoning) for most execution. Escalate to Opus 4.8 only when the planning or review risk justifies the extra token spend.</p>
                         </div>
                         <div class="summary-item">
                             <span class="fact-label">Completion gate</span>
@@ -889,10 +1024,10 @@
                             <p>The 70 percent problem still applies: the first draft is cheap, but the last mile requires engineering judgment.</p>
                         </div>
                     </div>
-                    <div class="callout" style="border-left-color: var(--danger); background: rgba(248, 81, 73, 0.1);">
+                    <div class="callout callout-full-width" style="border-left-color: var(--danger); background: rgba(248, 81, 73, 0.1);">
                         <p><strong>Data safety, non-negotiable:</strong> never share personal, private, or sensitive data with an AI. That includes PII (names tied to records, emails, phone numbers, addresses, ID or passport numbers), credentials and secrets (API keys, tokens, passwords, private keys, <span class="inline-code">.env</span> contents), and real customer or user data. When a task touches sensitive data, use placeholders, redacted samples, or synthetic fixtures. When in doubt, leave it out and ask a teammate first.</p>
                     </div>
-                    <div class="callout" style="border-left-color: var(--success); background: rgba(63, 185, 80, 0.08);">
+                    <div class="callout callout-full-width" style="border-left-color: var(--success); background: rgba(63, 185, 80, 0.08);">
                         <p><strong>Must-watch course:</strong> <a href="https://drive.google.com/file/d/1h4fyIqX81i7JmusKLe0IFql4IZQ7T9lK/view?usp=sharing" target="_blank" rel="noreferrer">Watch this course</a>. It takes about 1 hr 51 min, and you can speed up the lessons you already know.</p>
                     </div>
                 </section>
@@ -945,12 +1080,12 @@
                                 <tr>
                                     <td>Clear implementation slice with low ambiguity and local scope</td>
                                     <td>Executor only</td>
-                                    <td>Use Haiku 4.5 for super simple tasks, or Sonnet 4.6 or GPT 5.4 for typical executor work</td>
+                                    <td>Use MAI Code 1 Flash or Haiku 4.5 for super simple tasks, GPT 5.3-Codex for code-heavy work, or Sonnet 5 for typical executor work that needs reasoning</td>
                                 </tr>
                                 <tr>
                                     <td>Multi-file task, unclear sequencing, or need for explicit handoff artifacts</td>
                                     <td>Planner then executor</td>
-                                    <td>Use a frontier model such as GPT 5.5, Opus 4.8, or GLM 5.2 to write <span class="inline-code">plan.md</span>, then hand execution to a lower-cost model</td>
+                                    <td>Use Opus 4.8 to write <span class="inline-code">plan.md</span>, then hand execution to a lower-cost model</td>
                                 </tr>
                                 <tr>
                                     <td>Security-sensitive, architecture-heavy, or regression-prone work</td>
@@ -967,7 +1102,7 @@
                         <h2>Tokenomics for developers</h2>
                         <p>Copilot bills by tokens, not requests. Two numbers drive your whole cost: how much context you send in, and how much the model writes back out. Everything else follows from those two.</p>
                     </div>
-                    <div class="callout">
+                    <div class="callout callout-full-width">
                         <p><strong>The one thing to remember:</strong> every message re-sends the whole conversation. Turn 10 does not cost one message, it re-bills the entire thread so far as input. That is why long sessions get expensive, and why starting a fresh chat per task is a cost decision, not just a tidiness one.</p>
                     </div>
                     <div class="row-list">
@@ -1020,20 +1155,60 @@
                             </tbody>
                         </table>
                     </div>
-                    <p class="footer-note" style="border-top: 0; margin-top: var(--size-3); padding-top: 0;">Relative and per-task figures are intuition, not invoices. Real per-task cost depends on context size, session length, and how many turns the model takes, so a frontier model on a bloated context can cost far more than the rate ratio alone suggests. Current per-token rates for each tier are in the rate card below.</p>
+                    <p class="footer-note footer-note-full-width" style="border-top: 0; margin-top: var(--size-3); padding-top: 0;">Relative and per-task figures are intuition, not invoices. Real per-task cost depends on context size, session length, and how many turns the model takes, so a frontier model on a bloated context can cost far more than the rate ratio alone suggests. Current per-token rates for each tier are in the rate card below.</p>
                     <div class="callout rate-card">
-                        <p><strong>Rate card (per 1M tokens, input / output) &mdash; update on each model release:</strong></p>
-                        <ul>
-                            <li><strong>Light</strong> &mdash; Haiku 4.5: $1 / $5</li>
-                            <li><strong>Mid</strong> &mdash; Sonnet 4.6: $3 / $15 &nbsp;&middot;&nbsp; GPT 5.4: $3 / $15</li>
-                            <li><strong>Frontier</strong> &mdash; Opus 4.8: $5 / $25 &nbsp;&middot;&nbsp; GPT 5.5: $5 / $30 &nbsp;&middot;&nbsp; GLM 5.2: frontier-tier</li>
-                        </ul>
+                        <p><strong>Rate card &mdash; per 1M tokens, input / output.</strong> Update on each model release.</p>
+                        <table class="rate-card-table">
+                            <thead>
+                                <tr>
+                                    <th>Tier</th>
+                                    <th>Model</th>
+                                    <th class="num">Input</th>
+                                    <th class="num">Output</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="2"><span class="tier-tag tier-light">Light</span></td>
+                                    <td>MAI Code 1 Flash</td>
+                                    <td class="num">$0.75</td>
+                                    <td class="num">$4.50</td>
+                                </tr>
+                                <tr>
+                                    <td>Haiku 4.5</td>
+                                    <td class="num">$1</td>
+                                    <td class="num">$5</td>
+                                </tr>
+                                <tr class="tier-divider">
+                                    <td rowspan="2"><span class="tier-tag tier-mid">Mid</span></td>
+                                    <td>GPT 5.3-Codex</td>
+                                    <td class="num">$1.75</td>
+                                    <td class="num">$14</td>
+                                </tr>
+                                <tr>
+                                    <td>Sonnet 5</td>
+                                    <td class="num">$3</td>
+                                    <td class="num">$15</td>
+                                </tr>
+                                <tr class="tier-divider">
+                                    <td rowspan="2"><span class="tier-tag tier-frontier">Frontier</span></td>
+                                    <td>Opus 4.8</td>
+                                    <td class="num">$5</td>
+                                    <td class="num">$25</td>
+                                </tr>
+                                <tr>
+                                    <td>Fable 5 <span class="rate-card-flag">limited teams</span></td>
+                                    <td class="num">$10</td>
+                                    <td class="num">$50</td>
+                                </tr>
+                            </tbody>
+                        </table>
                         <p class="rate-card-note">Rates current as of July 2026. Cached context reads up to 90% cheaper. Confirm against provider pricing pages before budgeting.</p>
                     </div>
-                    <div class="callout" style="border-left-color: var(--success); background: rgba(63, 185, 80, 0.08);">
+                    <div class="callout callout-full-width" style="border-left-color: var(--success); background: rgba(63, 185, 80, 0.08);">
                         <p><strong>Caching rewards staying put:</strong> context re-sent within one session is cached at up to 90% off, but restarting mid-task throws that saving away. So the rule is: a fresh chat for a new task, but keep the context stable within a single task.</p>
                     </div>
-                    <div class="callout" style="border-left-color: var(--warning); background: rgba(210, 153, 34, 0.1);">
+                    <div class="callout callout-full-width" style="border-left-color: var(--warning); background: rgba(210, 153, 34, 0.1);">
                         <p><strong>Most context is stale weight:</strong> in a typical task, much of the input is failed attempts, verbose tool output, and file dumps from many turns ago, all re-billed every turn. Trimming to the files that actually matter is the single biggest lever you personally control.</p>
                     </div>
                     <div class="panel-grid" style="margin-top: var(--size-5);">
@@ -1057,6 +1232,76 @@
                             </ul>
                         </div>
                     </div>
+                </section>
+
+                <section class="section" id="models">
+                    <div class="section-head">
+                        <h2>Which model to use</h2>
+                        <p>These are the only models enabled in our Copilot. Match the model to the job: start on the cheapest tier that can do the task well, and escalate only when the work genuinely needs more reasoning. Per-tier rates are in the rate card above.</p>
+                    </div>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Model</th>
+                                    <th>Tier</th>
+                                    <th>Reach for it when</th>
+                                    <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>MAI Code 1 Flash</td>
+                                    <td>Light</td>
+                                    <td>Fast, well-defined coding: quick edits, boilerplate, mechanical refactors, high-volume execution where speed matters.</td>
+                                    <td>Cheapest option and code-focused. Reach here first for simple, clearly-specified coding work.</td>
+                                </tr>
+                                <tr>
+                                    <td>Haiku 4.5</td>
+                                    <td>Light</td>
+                                    <td>Quick non-code edits, routine test generation, lookups, "explain this function", commit messages, and any well-scoped single-file slice.</td>
+                                    <td>Cheap general-purpose executor and best value per unit of quality. The default for clear, local work that is not purely code-shaped.</td>
+                                </tr>
+                                <tr>
+                                    <td>GPT 5.3-Codex</td>
+                                    <td>Mid</td>
+                                    <td>Code-heavy execution: large mechanical refactors, code generation across several files, Codex-style agentic loops.</td>
+                                    <td>Code-specialized and currently cheaper than Sonnet 5 on both input and output. Pick it over Sonnet when the task is heavily code-shaped rather than reasoning-shaped. See the evaluation note below.</td>
+                                </tr>
+                                <tr>
+                                    <td>Sonnet 5</td>
+                                    <td>Mid</td>
+                                    <td>Most day-to-day execution with real reasoning: multi-file changes with coherence to hold, moderate ambiguity, or tasks that need more judgment than the light tier gives.</td>
+                                    <td>The general-purpose workhorse when a task is not obviously light and not purely code-shaped. Reserve it for work that uses the extra reasoning.</td>
+                                </tr>
+                                <tr>
+                                    <td>Opus 4.8</td>
+                                    <td>Frontier</td>
+                                    <td>Hard planning and architecture, gnarly cross-file debugging, high-risk refactors, and repo-scale software engineering where a subtle error is costly.</td>
+                                    <td>The strongest model available to all teams and the frontier escalation target for planning passes and the hardest slices. Use deliberately, not as a default.</td>
+                                </tr>
+                                <tr>
+                                    <td>Fable 5</td>
+                                    <td>Frontier+</td>
+                                    <td>Only the genuinely hardest, longest, most multi-file work, where its lead compounds: large migrations, deep multi-step reasoning, complex architecture.</td>
+                                    <td>The most capable option and the most expensive, at roughly double Opus on output. Enabled for specific teams only. See the caveats below before using it.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="callout" style="border-left-color: var(--warning); background: rgba(210, 153, 34, 0.1);">
+                        <p><strong>Before reaching for Fable 5:</strong> it costs about twice Opus 4.8 per output token, so use it only where the extra capability clearly earns that premium, not as a default. It also runs a safety classifier that can silently reroute some sensitive requests to a weaker model, and it carries a longer data-retention requirement, so treat it with the same data-safety caution as everything else and keep PII and secrets out of it.</p>
+                    </div>
+                    <div class="callout">
+                        <p><strong>The default ladder:</strong> reach for MAI Code 1 Flash or Haiku 4.5 first for scoped execution, step up to GPT 5.3-Codex for code-heavy work or Sonnet 5 when the task has real ambiguity or cross-file coherence, and escalate to Opus 4.8 (or Fable 5 on approved teams) only for planning passes and the hardest slices. If a cheap model fails the same task two or three times, that is the signal to step up, not to keep retrying.</p>
+                    </div>
+                    <div class="callout" style="border-left-color: var(--accent); background: rgba(88, 166, 255, 0.08);">
+                        <p><strong>Availability by team:</strong> Fable 5 is enabled for specific teams only. Everyone has Opus 4.8, Haiku 4.5, Sonnet 5, GPT 5.3-Codex, and MAI Code 1 Flash. Opus 4.8 is the frontier escalation target for all teams, and Sonnet 5 (or GPT 5.3-Codex for code-heavy work) is your everyday default.</p>
+                    </div>
+                    <div class="callout" style="border-left-color: var(--accent); background: rgba(88, 166, 255, 0.08);">
+                        <p><strong>Under evaluation, GPT 5.3-Codex as a coding default:</strong> Codex is currently cheaper than Sonnet 5 on both input and output, and it is code-tuned, so for heavily code-shaped work it may be the better cost-and-quality pick rather than just a mid alternative. We are testing whether it can carry a chunk of everyday coding volume in place of Sonnet 5. Until that is confirmed, treat Sonnet 5 as the default and reach for Codex on code-heavy tasks; if you use it, note how it compares so we can decide.</p>
+                    </div>
+                    <p class="footer-note" style="margin-top: var(--size-4);"><strong>Maintainers:</strong> specific model names and rates live in exactly two places, this table and the rate card in the Tokenomics section. When a model is added, removed, repriced, or its team availability changes, update both, then bump the version stamp at the top of the page. Nothing else in the guide hard-codes a model name, so those two spots are all you need to touch.</p>
                 </section>
 
                 <section class="section" id="workflow">
@@ -1171,8 +1416,8 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="callout" style="border-left-color: var(--warning); background: rgba(210, 153, 34, 0.1);">
-                        <p><strong>Cost tip:</strong> a lightweight model is the most cost-effective choice for routine execution and scoped reasoning, since token cost scales with the model and the context you send. For real solution-finding, talk through the problem with a teammate first when needed, then use models to accelerate execution or review instead of outsourcing the initial engineering judgment to frontier models such as Opus 4.8, GPT 5.5, or GLM 5.2.</p>
+                    <div class="callout callout-full-width" style="border-left-color: var(--warning); background: rgba(210, 153, 34, 0.1);">
+                        <p><strong>Cost tip:</strong> a lightweight model is the most cost-effective choice for routine execution and scoped reasoning, since token cost scales with the model and the context you send. For real solution-finding, talk through the problem with a teammate first when needed, then use models to accelerate execution or review instead of outsourcing the initial engineering judgment to the frontier model (Opus 4.8, or Fable 5 on approved teams).</p>
                     </div>
                 </section>
 
@@ -1237,10 +1482,10 @@
                         <span class="badge warning">Negative constraints matter</span>
                         <span class="badge danger">Restart stale sessions</span>
                     </div>
-                    <div class="callout">
+                    <div class="callout callout-full-width">
                         <p><strong>Context packet checklist:</strong> task objective, the 3 to 5 relevant files attached with <span class="inline-code">#file</span>, <span class="inline-code">@file</span>, <span class="inline-code">#editor</span>, or the <span class="inline-code">+</span> button, the exact functions or components if known, explicit constraints, one or two examples to mimic, and the expected validation step.</p>
                     </div>
-                    <div class="callout" style="border-left-color: var(--warning); background: rgba(210, 153, 34, 0.1);">
+                    <div class="callout callout-full-width" style="border-left-color: var(--warning); background: rgba(210, 153, 34, 0.1);">
                         <p><strong>Thinking Effort Guidelines:</strong> Configure thinking effort to <strong>Medium</strong> by default for routine execution. Elevate to <strong>High</strong> or <strong>Extra High</strong> for complex planning, architectural design, or critical reviews. Higher effort produces more reasoning tokens, which cost more, so treat it as a dial rather than a default.</p>
                     </div>
                     <div class="template-grid" style="margin-top: var(--size-5);">
@@ -1451,7 +1696,7 @@ Rate issues by severity.</code></pre>
                             <p>The agent can accelerate drafting, planning, and execution, but it does not change ownership. The engineer is still responsible for scope, correctness, and budget discipline.</p>
                         </div>
                     </div>
-                    <p class="footer-note">This page is intentionally strict because the budget signal is already visible. Efficient agent use is not about maximizing model time. It is about spending model time only where it creates much more value for the engineering work.</p>
+                    <p class="footer-note footer-note-full-width">This page is intentionally strict because the budget signal is already visible. Efficient agent use is not about maximizing model time. It is about spending model time only where it creates much more value for the engineering work.</p>
                 </section>
             </article>
         </main>
