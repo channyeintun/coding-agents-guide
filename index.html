@@ -285,7 +285,16 @@
             font-size: 1.2rem;
             color: var(--text-muted);
             line-height: 1.5;
+            margin: 0 0 var(--size-4) 0;
+        }
+
+        .doc-meta {
+            font-size: 0.82rem;
+            color: var(--text-muted);
             margin: 0 0 var(--size-6) 0;
+        }
+        .doc-meta strong {
+            color: var(--text-main);
         }
 
         .page-summary {
@@ -575,6 +584,26 @@
             color: var(--text-strong);
         }
 
+        .rate-card ul {
+            list-style: none;
+            margin: var(--size-3) 0 var(--size-2);
+            padding: 0;
+        }
+        .rate-card ul li {
+            padding: 0.3rem 0;
+            border-top: 1px solid var(--line-soft);
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+        .rate-card ul li:first-child {
+            border-top: 0;
+        }
+        .rate-card .rate-card-note {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin: var(--size-2) 0 0;
+        }
+
         /* Badges */
         .badge-row {
             display: flex;
@@ -805,6 +834,7 @@
                     <ul class="subnav-list">
                         <li class="nav-item"><a href="#principles" class="subnav-link">Operating principles</a></li>
                         <li class="nav-item"><a href="#decision" class="subnav-link">Manual vs agent decision</a></li>
+                        <li class="nav-item"><a href="#tokenomics" class="subnav-link">Tokenomics for developers</a></li>
                     </ul>
                 </li>
                 <li class="nav-item expanded">
@@ -841,6 +871,7 @@
                     <p class="eyebrow">Guideline</p>
                     <h1>Optimal guide, rules and governance for efficient coding-agent workflows</h1>
                     <p class="lede">Use agents only when they clearly help with the thinking work. Keep everything else manual, scoped, and cheap.</p>
+                    <p class="doc-meta"><strong>Version 1.1</strong> &nbsp;&middot;&nbsp; Last updated: 5 July 2026 &nbsp;&middot;&nbsp; Living document, reviewed at each model release.</p>
                     <div class="page-summary">
                         <div class="summary-item">
                             <span class="fact-label">Budget driver</span>
@@ -850,13 +881,16 @@
                         <div class="summary-item">
                             <span class="fact-label">Default route</span>
                             <strong class="fact-value">Plan in chat first, then use Agent mode only when the slice is concrete.</strong>
-                            <p>Favor Skills plus Sonnet 4.6 (1x) or GPT 5.4 (1x) for most work. Escalate to expensive models such as GPT 5.5, Opus 4.8, or GLM 5.2 only when the planning or review risk justifies the spend.</p>
+                            <p>Copilot now bills by token consumption, so cost scales with context size on every turn. Favor a lightweight model for simple work and a mid-tier model (such as Sonnet 4.6 or GPT 5.4) for most execution. Escalate to a frontier model such as GPT 5.5, Opus 4.8, or GLM 5.2 only when the planning or review risk justifies the extra token spend.</p>
                         </div>
                         <div class="summary-item">
                             <span class="fact-label">Completion gate</span>
                             <strong class="fact-value">A task is complete only after validation, commit, review, and manual verification.</strong>
                             <p>The 70 percent problem still applies: the first draft is cheap, but the last mile requires engineering judgment.</p>
                         </div>
+                    </div>
+                    <div class="callout" style="border-left-color: var(--danger); background: rgba(248, 81, 73, 0.1);">
+                        <p><strong>Data safety, non-negotiable:</strong> never share personal, private, or sensitive data with an AI. That includes PII (names tied to records, emails, phone numbers, addresses, ID or passport numbers), credentials and secrets (API keys, tokens, passwords, private keys, <span class="inline-code">.env</span> contents), and real customer or user data. When a task touches sensitive data, use placeholders, redacted samples, or synthetic fixtures. When in doubt, leave it out and ask a teammate first.</p>
                     </div>
                     <div class="callout" style="border-left-color: var(--success); background: rgba(63, 185, 80, 0.08);">
                         <p><strong>Must-watch course:</strong> <a href="https://drive.google.com/file/d/1h4fyIqX81i7JmusKLe0IFql4IZQ7T9lK/view?usp=sharing" target="_blank" rel="noreferrer">Watch this course</a>. It takes about 1 hr 51 min, and you can speed up the lessons you already know.</p>
@@ -925,6 +959,103 @@
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
+                </section>
+
+                <section class="section" id="tokenomics">
+                    <div class="section-head">
+                        <h2>Tokenomics for developers</h2>
+                        <p>Copilot bills by tokens, not requests. Two numbers drive your whole cost: how much context you send in, and how much the model writes back out. Everything else follows from those two.</p>
+                    </div>
+                    <div class="callout">
+                        <p><strong>The one thing to remember:</strong> every message re-sends the whole conversation. Turn 10 does not cost one message, it re-bills the entire thread so far as input. That is why long sessions get expensive, and why starting a fresh chat per task is a cost decision, not just a tidiness one.</p>
+                    </div>
+                    <div class="row-list">
+                        <div class="row-item">
+                            <h3>Input and output both cost, output usually more</h3>
+                            <p>You pay for the context you send in and the tokens the model writes back. Output is billed at a higher rate per token, so verbose generation and long reasoning are where cost tends to land.</p>
+                        </div>
+                        <div class="row-item">
+                            <h3>Context is cumulative</h3>
+                            <p>Five attached files are re-sent on every turn until the session ends. Large context is a per-turn tax, not a one-time charge. This is the direct reason to bring only the 3 to 5 files that matter.</p>
+                        </div>
+                        <div class="row-item">
+                            <h3>Model choice is a multiplier</h3>
+                            <p>The same task on a frontier model can cost several times what it costs on a light model. The routing decision moves the bill far more than prompt wording ever will.</p>
+                        </div>
+                        <div class="row-item">
+                            <h3>Thinking effort is an output dial</h3>
+                            <p>Higher reasoning effort produces more thinking tokens, billed as output. Keep it at Medium unless the task genuinely needs more.</p>
+                        </div>
+                        <div class="row-item">
+                            <h3>Completions are free</h3>
+                            <p>Inline completions and next-edit suggestions do not consume usage. Let them handle routine typing, and reserve chat and Agent mode for work that needs reasoning.</p>
+                        </div>
+                    </div>
+                    <div class="table-wrap" style="margin-top: var(--size-5);">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Tier</th>
+                                    <th>Relative cost</th>
+                                    <th>Typical task cost</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Light</td>
+                                    <td>1x baseline</td>
+                                    <td>Quick question or one-file edit: under a cent</td>
+                                </tr>
+                                <tr>
+                                    <td>Mid</td>
+                                    <td>~3x the light tier</td>
+                                    <td>Scoped slice or bug fix: roughly $0.10 to $1</td>
+                                </tr>
+                                <tr>
+                                    <td>Frontier</td>
+                                    <td>~5x on rate, more per task</td>
+                                    <td>Planning or multi-file agent task: ~$1 to $5+; long unscoped session: $5 to $15+</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="footer-note" style="border-top: 0; margin-top: var(--size-3); padding-top: 0;">Relative and per-task figures are intuition, not invoices. Real per-task cost depends on context size, session length, and how many turns the model takes, so a frontier model on a bloated context can cost far more than the rate ratio alone suggests. Current per-token rates for each tier are in the rate card below.</p>
+                    <div class="callout rate-card">
+                        <p><strong>Rate card (per 1M tokens, input / output) &mdash; update on each model release:</strong></p>
+                        <ul>
+                            <li><strong>Light</strong> &mdash; Haiku 4.5: $1 / $5</li>
+                            <li><strong>Mid</strong> &mdash; Sonnet 4.6: $3 / $15 &nbsp;&middot;&nbsp; GPT 5.4: $3 / $15</li>
+                            <li><strong>Frontier</strong> &mdash; Opus 4.8: $5 / $25 &nbsp;&middot;&nbsp; GPT 5.5: $5 / $30 &nbsp;&middot;&nbsp; GLM 5.2: frontier-tier</li>
+                        </ul>
+                        <p class="rate-card-note">Rates current as of July 2026. Cached context reads up to 90% cheaper. Confirm against provider pricing pages before budgeting.</p>
+                    </div>
+                    <div class="callout" style="border-left-color: var(--success); background: rgba(63, 185, 80, 0.08);">
+                        <p><strong>Caching rewards staying put:</strong> context re-sent within one session is cached at up to 90% off, but restarting mid-task throws that saving away. So the rule is: a fresh chat for a new task, but keep the context stable within a single task.</p>
+                    </div>
+                    <div class="callout" style="border-left-color: var(--warning); background: rgba(210, 153, 34, 0.1);">
+                        <p><strong>Most context is stale weight:</strong> in a typical task, much of the input is failed attempts, verbose tool output, and file dumps from many turns ago, all re-billed every turn. Trimming to the files that actually matter is the single biggest lever you personally control.</p>
+                    </div>
+                    <div class="panel-grid" style="margin-top: var(--size-5);">
+                        <div class="panel">
+                            <h3>See your own spend</h3>
+                            <ul>
+                                <li>Open the Copilot status dashboard from the VS Code status bar for your monthly usage.</li>
+                                <li>Check the session-level cost readout after a chat or agent run.</li>
+                                <li>Use the Agent Debug Logs: the Summary view shows token counts, and Cache Explorer shows your cache hit rate.</li>
+                                <li>See the per-developer breakdown under GitHub settings, then billing, then Copilot.</li>
+                            </ul>
+                        </div>
+                        <div class="panel">
+                            <h3>Cheapest habits, ranked</h3>
+                            <ul>
+                                <li>Let inline completions handle routine typing.</li>
+                                <li>Match the model to the task; do not default to frontier.</li>
+                                <li>Attach 3 to 5 relevant files, not the whole repo.</li>
+                                <li>Start a fresh chat per task; keep context stable within a task.</li>
+                                <li>Keep thinking effort at Medium unless the task needs more.</li>
+                            </ul>
+                        </div>
                     </div>
                 </section>
 
@@ -1014,7 +1145,8 @@
                         <div class="panel">
                             <h3>Never</h3>
                             <ul>
-                                <li>Use a premium planner or reviewer for trivial fixes.</li>
+                                <li>Share PII, secrets, credentials, or real customer data with a model.</li>
+                                <li>Use a frontier planner or reviewer for trivial fixes.</li>
                                 <li>Paste the whole repository or long irrelevant history into the prompt.</li>
                                 <li>Continue a stale conversation for unrelated work.</li>
                                 <li>Let one model output automatically trigger another without a review checkpoint.</li>
@@ -1040,7 +1172,7 @@
                         </div>
                     </div>
                     <div class="callout" style="border-left-color: var(--warning); background: rgba(210, 153, 34, 0.1);">
-                        <p><strong>Cost tip:</strong> favor <a href="https://aitmpl.com/skills/" target="_blank" rel="noreferrer">Skills</a> plus Sonnet 4.6 (1x) and GPT 5.4 (1x) for routine execution and scoped reasoning. For real solution-finding, talk through the problem with a teammate first when needed, then use models to accelerate execution or review instead of outsourcing the initial engineering judgment to frontier models such as Opus 4.8, GPT 5.5, or GLM 5.2.</p>
+                        <p><strong>Cost tip:</strong> a lightweight model is the most cost-effective choice for routine execution and scoped reasoning, since token cost scales with the model and the context you send. For real solution-finding, talk through the problem with a teammate first when needed, then use models to accelerate execution or review instead of outsourcing the initial engineering judgment to frontier models such as Opus 4.8, GPT 5.5, or GLM 5.2.</p>
                     </div>
                 </section>
 
@@ -1090,6 +1222,9 @@
                     <div class="callout">
                         <p><strong>Quick context shortcuts:</strong> use <span class="inline-code">#index.html</span> or <span class="inline-code">@index.html</span> to attach a specific file, use <span class="inline-code">#editor</span> for the current tab, and use the <span class="inline-code">+</span> button when you want to browse attachments visually.</p>
                     </div>
+                    <div class="callout" style="border-left-color: var(--success); background: rgba(63, 185, 80, 0.08);">
+                        <p><strong>Completions are free:</strong> inline code completions and next-edit suggestions are included with your seat and do not consume usage. Lean on them for routine typing, and save chat and Agent mode for work that actually needs reasoning.</p>
+                    </div>
                 </section>
 
                 <section class="section" id="templates">
@@ -1106,7 +1241,7 @@
                         <p><strong>Context packet checklist:</strong> task objective, the 3 to 5 relevant files attached with <span class="inline-code">#file</span>, <span class="inline-code">@file</span>, <span class="inline-code">#editor</span>, or the <span class="inline-code">+</span> button, the exact functions or components if known, explicit constraints, one or two examples to mimic, and the expected validation step.</p>
                     </div>
                     <div class="callout" style="border-left-color: var(--warning); background: rgba(210, 153, 34, 0.1);">
-                        <p><strong>Thinking Effort Guidelines:</strong> Configure thinking effort to <strong>Medium</strong> by default for routine execution. Elevate to <strong>High</strong> or <strong>Extra High</strong> for complex planning, architectural design, or critical reviews.</p>
+                        <p><strong>Thinking Effort Guidelines:</strong> Configure thinking effort to <strong>Medium</strong> by default for routine execution. Elevate to <strong>High</strong> or <strong>Extra High</strong> for complex planning, architectural design, or critical reviews. Higher effort produces more reasoning tokens, which cost more, so treat it as a dial rather than a default.</p>
                     </div>
                     <div class="template-grid" style="margin-top: var(--size-5);">
                         <div class="template" id="template-brainstorm">
@@ -1208,7 +1343,8 @@ Constraints:
 - Read only files relevant to the current task
 - Prefer existing patterns
 - Stop and report blockers instead of guessing
-- Do not widen scope without updating plan.md</code></pre>
+- Do not widen scope without updating plan.md
+- Do NOT include PII, secrets, or real customer data</code></pre>
                         </div>
                         <div class="template" id="template-reviewer">
                             <div class="template-header">
