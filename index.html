@@ -1215,10 +1215,15 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td rowspan="2"><span class="tier-tag tier-light">Light</span></td>
+                                    <td rowspan="3"><span class="tier-tag tier-light">Light</span></td>
                                     <td>MAI Code 1 Flash</td>
                                     <td class="num">$0.75</td>
                                     <td class="num">$4.50</td>
+                                </tr>
+                                <tr>
+                                    <td>Kimi K2.7 Code <span class="rate-card-flag">on trial</span></td>
+                                    <td class="num">$0.95</td>
+                                    <td class="num">$4</td>
                                 </tr>
                                 <tr>
                                     <td>Haiku 4.5</td>
@@ -1242,10 +1247,15 @@
                                     <td class="num">$15</td>
                                 </tr>
                                 <tr class="tier-divider">
-                                    <td rowspan="2"><span class="tier-tag tier-frontier">Frontier</span></td>
+                                    <td rowspan="3"><span class="tier-tag tier-frontier">Frontier</span></td>
                                     <td>Opus 4.8</td>
                                     <td class="num">$5</td>
                                     <td class="num">$25</td>
+                                </tr>
+                                <tr>
+                                    <td>GPT 5.6 Sol <span class="rate-card-flag">limited teams</span></td>
+                                    <td class="num">$5</td>
+                                    <td class="num">$30</td>
                                 </tr>
                                 <tr>
                                     <td>Fable 5 <span class="rate-card-flag">limited teams</span></td>
@@ -1308,6 +1318,12 @@
                                     <td>Cheapest model, made for code. Try this first for simple, clear coding tasks.</td>
                                 </tr>
                                 <tr>
+                                    <td>Kimi K2.7 Code</td>
+                                    <td>Light</td>
+                                    <td>Cheap coding tasks, as a trial option next to MAI Code 1 Flash and Haiku: edits, refactors, and agent coding work.</td>
+                                    <td>New open-weight model on trial. Very cheap, and its maker claims top-level coding, but those claims are the maker's own, so we are checking it on our real tasks. It always writes thinking tokens, so real cost per task can be higher than the rate looks. Not a replacement for Opus or Fable.</td>
+                                </tr>
+                                <tr>
                                     <td>Haiku 4.5</td>
                                     <td>Light</td>
                                     <td>Quick non-code edits, simple tests, lookups, "explain this function", commit messages, and small single-file tasks.</td>
@@ -1338,6 +1354,12 @@
                                     <td>The strongest model everyone can use. Use it for planning and the hardest tasks. Use it on purpose, not by default.</td>
                                 </tr>
                                 <tr>
+                                    <td>GPT 5.6 Sol</td>
+                                    <td>Frontier</td>
+                                    <td>For approved teams only: the hardest agent coding and long tasks, or when you want a strong model from a different family than Opus for a second opinion.</td>
+                                    <td>Only some teams can use it. It costs more than Opus 4.8 for output ($30 vs $25), but it often finishes tasks with fewer output tokens, so the real cost per task can be close. Use Opus first; use Sol when Opus gets stuck or for comparison.</td>
+                                </tr>
+                                <tr>
                                     <td>Fable 5</td>
                                     <td>Frontier+</td>
                                     <td>Only the hardest, longest, many-file work: big migrations, deep step-by-step thinking, and complex design.</td>
@@ -1353,10 +1375,10 @@
                         <p><strong>The default order:</strong> start with MAI Code 1 Flash or Haiku 4.5 for small tasks. Move up to GPT 5.3-Codex for heavy coding, or Sonnet 5 when the task is unclear or spans many files. Use Opus 4.8 (or Fable 5 on approved teams) only for planning and the hardest tasks. If a cheap model fails the same task two or three times, move up instead of trying again and again. For screenshots, diagrams, or UI pictures, use Sonnet 5.</p>
                     </div>
                     <div class="callout" style="border-left-color: var(--accent); background: rgba(88, 166, 255, 0.08);">
-                        <p><strong>Who can use what:</strong> only some teams can use Fable 5. Everyone can use Opus 4.8, Haiku 4.5, Sonnet 5, GPT 5.6 Terra, GPT 5.3-Codex, and MAI Code 1 Flash. For all teams, Opus 4.8 is the top model to move up to, and Sonnet 5 (or GPT 5.3-Codex for heavy coding) is your everyday choice. GPT 5.6 Sol, GPT 5.6 Luna, and Kimi K2.7 Code are turned off on purpose: Sol costs more than Opus 4.8 for output, and Luna and Kimi repeat what our cheap models already do.</p>
+                        <p><strong>Who can use what:</strong> only some teams can use Fable 5 and GPT 5.6 Sol. Everyone can use Opus 4.8, Haiku 4.5, Sonnet 5, GPT 5.6 Terra, GPT 5.3-Codex, MAI Code 1 Flash, and Kimi K2.7 Code (on trial). For all teams, Opus 4.8 is the top model to move up to, and Sonnet 5 (or GPT 5.3-Codex for heavy coding) is your everyday choice. GPT 5.6 Luna is turned off on purpose: it repeats what our cheap models already do.</p>
                     </div>
                     <div class="callout" style="border-left-color: var(--accent); background: rgba(88, 166, 255, 0.08);">
-                        <p><strong>We are comparing two models with Sonnet 5:</strong> GPT 5.3-Codex for coding (cheaper than Sonnet 5 and made for code) and GPT 5.6 Terra for thinking work (cheaper input, same output, and a newer generation). For now, keep Sonnet 5 as the default, use Codex for heavy coding, and try Terra for the same kind of work you would give Sonnet 5. If you use either one, tell us how it compares so we can decide which models stay.</p>
+                        <p><strong>We are comparing three models right now:</strong> GPT 5.3-Codex for coding (cheaper than Sonnet 5 and made for code), GPT 5.6 Terra for thinking work (cheaper input, same output, and a newer generation), and Kimi K2.7 Code in the light tier (very cheap, next to MAI Code 1 Flash and Haiku). For now, keep Sonnet 5 as the default and use the trial models for the same kind of work you would give their neighbours. If you use one, tell us how it compares so we can decide which models stay.</p>
                     </div>
                     <p class="footer-note" style="margin-top: var(--size-4);"><strong>Maintainers:</strong> model names and rates are in only two places, this table and the rate card in the Tokenomics section. When a model changes (added, removed, new price, or new team access), update both, then change the version number at the top. No other part of the guide lists a model name, so these two spots are all you need to update. New models always start as trial options only: they replace a current model only after winning a side-by-side comparison on real tasks, never just because they are newer.</p>
                 </section>
