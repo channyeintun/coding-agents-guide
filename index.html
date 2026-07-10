@@ -1047,7 +1047,7 @@
                         <ul>
                             <li><strong>Easy, short task</strong> &rarr; do it yourself. No agent.</li>
                             <li><strong>Small, clear task</strong> &rarr; MAI Code 1 Flash or Haiku 4.5.</li>
-                            <li><strong>Lots of code</strong> &rarr; GPT 5.3-Codex. <strong>Unclear or many files</strong> &rarr; Sonnet 5.</li>
+                            <li><strong>Everyday coding, unclear tasks, many files</strong> &rarr; Sonnet 5. <strong>Long code-heavy agent runs</strong> &rarr; GPT 5.3-Codex.</li>
                             <li><strong>Planning and the hardest tasks only</strong> &rarr; Opus 4.8 (Fable 5 for some teams).</li>
                             <li><strong>Every message sends the whole chat again</strong> &rarr; start a new chat for each task, and attach only 3&ndash;5 files you need.</li>
                             <li><strong>Never</strong> give an AI private data, passwords, keys, or real customer data.</li>
@@ -1221,7 +1221,7 @@
                                     <td class="num">$4.50</td>
                                 </tr>
                                 <tr>
-                                    <td>Kimi K2.7 Code <span class="rate-card-flag">on trial</span></td>
+                                    <td>Kimi K2.7 Code</td>
                                     <td class="num">$0.95</td>
                                     <td class="num">$4</td>
                                 </tr>
@@ -1231,20 +1231,15 @@
                                     <td class="num">$5</td>
                                 </tr>
                                 <tr class="tier-divider">
-                                    <td rowspan="3"><span class="tier-tag tier-mid">Mid</span></td>
+                                    <td rowspan="2"><span class="tier-tag tier-mid">Mid</span></td>
                                     <td>GPT 5.3-Codex</td>
                                     <td class="num">$1.75</td>
                                     <td class="num">$14</td>
                                 </tr>
                                 <tr>
-                                    <td>GPT 5.6 Terra <span class="rate-card-flag">on trial</span></td>
-                                    <td class="num">$2.50</td>
-                                    <td class="num">$15</td>
-                                </tr>
-                                <tr>
                                     <td>Sonnet 5</td>
-                                    <td class="num">$3</td>
-                                    <td class="num">$15</td>
+                                    <td class="num">$2</td>
+                                    <td class="num">$10</td>
                                 </tr>
                                 <tr class="tier-divider">
                                     <td rowspan="3"><span class="tier-tag tier-frontier">Frontier</span></td>
@@ -1300,6 +1295,68 @@
                         <h2>Which model to use</h2>
                         <p>These are the only models turned on in our Copilot. Pick the model that fits the job: start with the cheapest one that can do it well, and move up only when the task really needs more thinking. Rates for each tier are in the rate card above.</p>
                     </div>
+                    <div class="callout" style="border-left-color: var(--warning); background: rgba(210, 153, 34, 0.1);">
+                        <p><strong>Do not use a big model for a small task.</strong> Big models do not make easy tasks better. They only make them cost more. Find your task below and use that model.</p>
+                    </div>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Your task</th>
+                                    <th>Use this</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Typing code (autocomplete)</td>
+                                    <td>Built-in suggestions &mdash; free, no model needed</td>
+                                </tr>
+                                <tr>
+                                    <td>Not sure which model to pick</td>
+                                    <td>Auto &mdash; Copilot picks for you and gives a 10% discount</td>
+                                </tr>
+                                <tr>
+                                    <td>Small edits, boilerplate, repeated changes</td>
+                                    <td>MAI Code 1 Flash</td>
+                                </tr>
+                                <tr>
+                                    <td>Cheap coding that still needs some thinking</td>
+                                    <td>Kimi K2.7 Code</td>
+                                </tr>
+                                <tr>
+                                    <td>Questions, lookups, commit messages, "explain this"</td>
+                                    <td>Haiku 4.5</td>
+                                </tr>
+                                <tr>
+                                    <td>Everyday coding: features, bug fixes, refactors</td>
+                                    <td>Sonnet 5</td>
+                                </tr>
+                                <tr>
+                                    <td>Long code-heavy agent runs across many files</td>
+                                    <td>GPT 5.3-Codex</td>
+                                </tr>
+                                <tr>
+                                    <td>Unclear task, or work across many files</td>
+                                    <td>Sonnet 5</td>
+                                </tr>
+                                <tr>
+                                    <td>Screenshots, mockups, diagrams</td>
+                                    <td>Any model except MAI Code 1 Flash, which cannot see images</td>
+                                </tr>
+                                <tr>
+                                    <td>Planning and the hardest problems</td>
+                                    <td>Opus 4.8</td>
+                                </tr>
+                                <tr>
+                                    <td>When Opus gets stuck (approved teams only)</td>
+                                    <td>GPT 5.6 Sol or Fable 5</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="callout">
+                        <p><strong>About Auto:</strong> Auto is the top choice in the model picker. Copilot looks at your task and picks a model for you, and you get a 10% discount on the model cost. Use Auto when you are not sure which model fits, or for mixed everyday work. But when you know the task is small, picking a cheap model yourself (see the table above) is still often cheaper, because Auto can choose a bigger model than the task needs. One more thing: do not switch models in the middle of a task. Switching resets the prompt cache and makes the same work cost more.</p>
+                    </div>
                     <div class="table-wrap">
                         <table>
                             <thead>
@@ -1315,37 +1372,31 @@
                                     <td>MAI Code 1 Flash</td>
                                     <td>Light</td>
                                     <td>Fast, clear coding: quick edits, boilerplate, simple refactors, and lots of small tasks where speed matters.</td>
-                                    <td>Cheapest model, made for code. Try this first for simple, clear coding tasks.</td>
+                                    <td>Cheapest model, made for code. Try this first for simple, clear coding tasks. It is our only model that cannot see images, so do not use it for screenshots.</td>
                                 </tr>
                                 <tr>
                                     <td>Kimi K2.7 Code</td>
                                     <td>Light</td>
-                                    <td>Cheap coding tasks, as a trial option next to MAI Code 1 Flash and Haiku: edits, refactors, and agent coding work.</td>
-                                    <td>New open-weight model on trial. Very cheap, and its maker claims top-level coding, but those claims are the maker's own, so we are checking it on our real tasks. It always writes thinking tokens, so real cost per task can be higher than the rate looks. Not a replacement for Opus or Fable.</td>
+                                    <td>Cheap coding that needs a little reasoning: edits, refactors, and agent coding work that is more than boilerplate.</td>
+                                    <td>Very cheap and made for code. It always writes thinking tokens, so the real cost per task can be higher than the rate looks. Use MAI Code 1 Flash for the simplest tasks. Not a replacement for Opus or Fable.</td>
                                 </tr>
                                 <tr>
                                     <td>Haiku 4.5</td>
                                     <td>Light</td>
                                     <td>Quick non-code edits, simple tests, lookups, "explain this function", commit messages, and small single-file tasks.</td>
-                                    <td>Cheap all-round model with great value. Use it by default for clear, small work that is not only code.</td>
-                                </tr>
-                                <tr>
-                                    <td>GPT 5.3-Codex</td>
-                                    <td>Mid</td>
-                                    <td>Heavy coding: big refactors, writing code across several files, and code-focused agent loops.</td>
-                                    <td>Made for code, and right now cheaper than Sonnet 5 for both input and output. Choose it over Sonnet when the task is mostly code, not deep thinking. See the note below.</td>
-                                </tr>
-                                <tr>
-                                    <td>GPT 5.6 Terra</td>
-                                    <td>Mid</td>
-                                    <td>Same kind of work as Sonnet 5: daily tasks that need thinking, changes across files, or unclear parts. We are comparing it with Sonnet 5.</td>
-                                    <td>New model on trial. It costs less than Sonnet 5 for input and the same for output. Use it like Sonnet 5 and tell us how it compares. See the note below.</td>
+                                    <td>Cheap all-round model for questions and talk, not for writing code. For code, use MAI Code 1 Flash or GPT 5.3-Codex instead.</td>
                                 </tr>
                                 <tr>
                                     <td>Sonnet 5</td>
                                     <td>Mid</td>
-                                    <td>Most daily work that needs real thinking: changes across files, some unclear parts, or tasks that need more judgment than the cheap models give.</td>
-                                    <td>The main all-round model when a task is not clearly simple and not only code. Use it when the extra thinking helps.</td>
+                                    <td>Everyday coding and daily work that needs thinking: building features, fixing bugs, refactors, unclear tasks, and changes across many files.</td>
+                                    <td>Your default model for most work. Cheaper output than GPT 5.3-Codex and a much bigger context window (1M), so it holds more files at once.</td>
+                                </tr>
+                                <tr>
+                                    <td>GPT 5.3-Codex</td>
+                                    <td>Mid</td>
+                                    <td>Code-heavy agent loops: long runs of code generation and refactoring across many files.</td>
+                                    <td>Made for code, with cheaper input and free cache writes, so it can win on long agent runs. But output costs more than Sonnet 5, and its context is smaller (400K).</td>
                                 </tr>
                                 <tr>
                                     <td>Opus 4.8</td>
@@ -1372,15 +1423,15 @@
                         <p><strong>Before you use Fable 5:</strong> it costs about twice Opus 4.8 for output, so use it only when the extra power is clearly worth it, not by default. It also has a safety filter that can quietly send some sensitive requests to a weaker model, and it keeps your data longer. Treat it with the same care as everything else, and keep private data and secrets out of it.</p>
                     </div>
                     <div class="callout">
-                        <p><strong>The default order:</strong> start with MAI Code 1 Flash or Haiku 4.5 for small tasks. Move up to GPT 5.3-Codex for heavy coding, or Sonnet 5 when the task is unclear or spans many files. Use Opus 4.8 (or Fable 5 on approved teams) only for planning and the hardest tasks. If a cheap model fails the same task two or three times, move up instead of trying again and again. For screenshots, diagrams, or UI pictures, use Sonnet 5.</p>
+                        <p><strong>The default order:</strong> start with MAI Code 1 Flash for small code tasks, and Haiku 4.5 for questions and non-code work. Use Sonnet 5 for everyday coding and anything unclear or across many files. Use GPT 5.3-Codex instead for long, code-heavy agent runs. Use Opus 4.8 (or Sol and Fable 5 on approved teams) only for planning and the hardest tasks. If a cheap model fails the same task two or three times, move up instead of trying again and again. Every model can see images except MAI Code 1 Flash.</p>
                     </div>
                     <div class="callout" style="border-left-color: var(--accent); background: rgba(88, 166, 255, 0.08);">
-                        <p><strong>Who can use what:</strong> only some teams can use Fable 5 and GPT 5.6 Sol. Everyone can use Opus 4.8, Haiku 4.5, Sonnet 5, GPT 5.6 Terra, GPT 5.3-Codex, MAI Code 1 Flash, and Kimi K2.7 Code (on trial). For all teams, Opus 4.8 is the top model to move up to, and Sonnet 5 (or GPT 5.3-Codex for heavy coding) is your everyday choice. GPT 5.6 Luna is turned off on purpose: it repeats what our cheap models already do.</p>
+                        <p><strong>Who can use what:</strong> only some teams can use Fable 5 and GPT 5.6 Sol. Everyone can use Opus 4.8, Sonnet 5, Haiku 4.5, GPT 5.3-Codex, MAI Code 1 Flash, and Kimi K2.7 Code. For all teams, Sonnet 5 is your everyday choice, GPT 5.3-Codex is for long code-heavy agent runs, and Opus 4.8 is the top model to move up to. GPT 5.6 Terra and GPT 5.6 Luna are turned off on purpose: Terra costs more than Sonnet 5 for both input and output with no benefit, and Luna repeats what our cheap models already do.</p>
                     </div>
                     <div class="callout" style="border-left-color: var(--accent); background: rgba(88, 166, 255, 0.08);">
-                        <p><strong>We are comparing three models right now:</strong> GPT 5.3-Codex for coding (cheaper than Sonnet 5 and made for code), GPT 5.6 Terra for thinking work (cheaper input, same output, and a newer generation), and Kimi K2.7 Code in the light tier (very cheap, next to MAI Code 1 Flash and Haiku). For now, keep Sonnet 5 as the default and use the trial models for the same kind of work you would give their neighbours. If you use one, tell us how it compares so we can decide which models stay.</p>
+                        <p><strong>These choices are our standard now.</strong> Pick the model that matches your task in the table above. If a model in the list is a poor fit for real work you are doing, raise it in the engineering channel so we can review the list, but do not quietly switch to a bigger model to get around it.</p>
                     </div>
-                    <p class="footer-note" style="margin-top: var(--size-4);"><strong>Maintainers:</strong> model names and rates are in only two places, this table and the rate card in the Tokenomics section. When a model changes (added, removed, new price, or new team access), update both, then change the version number at the top. No other part of the guide lists a model name, so these two spots are all you need to update. New models always start as trial options only: they replace a current model only after winning a side-by-side comparison on real tasks, never just because they are newer.</p>
+                    <p class="footer-note" style="margin-top: var(--size-4);"><strong>Maintainers:</strong> model names and rates are in only two places, this table and the rate card in the Tokenomics section. When a model changes (added, removed, new price, or new team access), update both, then change the version number at the top. No other part of the guide lists a model name, so these two spots are all you need to update. A new model replaces a current one only after it wins a side-by-side comparison on real work, never just because it is newer.</p>
                 </section>
 
                 <section class="section" id="workflow">
