@@ -1041,7 +1041,7 @@
                     <p class="eyebrow">Guideline</p>
                     <h1 class="title-full-width">A simple guide and rules for using coding agents well</h1>
                     <p class="lede lede-full-width">Use AI agents only when they really help you think. Do everything else by hand, keep it small, and keep it cheap.</p>
-                    <p class="doc-meta doc-meta-single-line"><strong>Version 1.4</strong> &nbsp;&middot;&nbsp; Last updated: 6 July 2026 &nbsp;&middot;&nbsp; Living document, reviewed at each model release.</p>
+                    <p class="doc-meta doc-meta-single-line"><strong>Version 1.5</strong> &nbsp;&middot;&nbsp; Last updated: 10 July 2026 &nbsp;&middot;&nbsp; Living document, reviewed at each model release.</p>
                     <div class="tldr-card">
                         <p class="tldr-title">TL;DR &mdash; the whole guide in six lines</p>
                         <ul>
@@ -1094,7 +1094,7 @@
                         </div>
                         <div class="row-item">
                             <h3>Start a new chat for each task</h3>
-                            <p>Start a new chat for each new task. Long chats get less accurate, forget your rules, and cost more with every message.</p>
+                            <p>Start a new chat for each new task. Long chats get less accurate, forget your rules, and cost more with every message. But do not open a new chat for every small follow-up question: keep related questions in one chat, and start fresh when the topic changes.</p>
                         </div>
                         <div class="row-item">
                             <h3>Always check before passing work to another model</h3>
@@ -1226,10 +1226,15 @@
                                     <td class="num">$5</td>
                                 </tr>
                                 <tr class="tier-divider">
-                                    <td rowspan="2"><span class="tier-tag tier-mid">Mid</span></td>
+                                    <td rowspan="3"><span class="tier-tag tier-mid">Mid</span></td>
                                     <td>GPT 5.3-Codex</td>
                                     <td class="num">$1.75</td>
                                     <td class="num">$14</td>
+                                </tr>
+                                <tr>
+                                    <td>GPT 5.6 Terra <span class="rate-card-flag">on trial</span></td>
+                                    <td class="num">$2.50</td>
+                                    <td class="num">$15</td>
                                 </tr>
                                 <tr>
                                     <td>Sonnet 5</td>
@@ -1249,13 +1254,13 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <p class="rate-card-note">Rates current as of July 2026. Cached context reads up to 90% cheaper. Confirm against provider pricing pages before budgeting.</p>
+                        <p class="rate-card-note">Rates current as of 10 July 2026. Very large prompts (long context) cost about 2x these rates, so oversized context is charged twice over. Cached context reads are up to 90% cheaper. Check the provider pricing pages before budgeting.</p>
                     </div>
                     <div class="callout callout-full-width" style="border-left-color: var(--success); background: rgba(63, 185, 80, 0.08);">
                         <p><strong>Caching rewards staying put:</strong> context re-sent within one session is cached at up to 90% off, but restarting mid-task throws that saving away. So the rule is: a fresh chat for a new task, but keep the context stable within a single task.</p>
                     </div>
                     <div class="callout callout-full-width" style="border-left-color: var(--warning); background: rgba(210, 153, 34, 0.1);">
-                        <p><strong>Old context is dead weight:</strong> in most tasks, a lot of the input is failed tries, long tool output, and files from many messages ago, all paid for again every message. Cutting this down to the files that matter is the biggest thing you can control yourself.</p>
+                        <p><strong>Old context is dead weight:</strong> in most tasks, a lot of the input is failed tries, long tool output, and files from many messages ago, all paid for again every message. Cutting this down to the files that matter is the biggest thing you can control yourself. Team instruction files (like <span class="inline-code">copilot-instructions.md</span> and <span class="inline-code">AGENTS.md</span>) are also added to every message, so keep them short.</p>
                     </div>
                     <div class="panel-grid" style="margin-top: var(--size-5);">
                         <div class="panel">
@@ -1315,6 +1320,12 @@
                                     <td>Made for code, and right now cheaper than Sonnet 5 for both input and output. Choose it over Sonnet when the task is mostly code, not deep thinking. See the note below.</td>
                                 </tr>
                                 <tr>
+                                    <td>GPT 5.6 Terra</td>
+                                    <td>Mid</td>
+                                    <td>Same kind of work as Sonnet 5: daily tasks that need thinking, changes across files, or unclear parts. We are comparing it with Sonnet 5.</td>
+                                    <td>New model on trial. It costs less than Sonnet 5 for input and the same for output. Use it like Sonnet 5 and tell us how it compares. See the note below.</td>
+                                </tr>
+                                <tr>
                                     <td>Sonnet 5</td>
                                     <td>Mid</td>
                                     <td>Most daily work that needs real thinking: changes across files, some unclear parts, or tasks that need more judgment than the cheap models give.</td>
@@ -1339,15 +1350,15 @@
                         <p><strong>Before you use Fable 5:</strong> it costs about twice Opus 4.8 for output, so use it only when the extra power is clearly worth it, not by default. It also has a safety filter that can quietly send some sensitive requests to a weaker model, and it keeps your data longer. Treat it with the same care as everything else, and keep private data and secrets out of it.</p>
                     </div>
                     <div class="callout">
-                        <p><strong>The default order:</strong> start with MAI Code 1 Flash or Haiku 4.5 for small tasks. Move up to GPT 5.3-Codex for heavy coding, or Sonnet 5 when the task is unclear or spans many files. Use Opus 4.8 (or Fable 5 on approved teams) only for planning and the hardest tasks. If a cheap model fails the same task two or three times, move up instead of trying again and again.</p>
+                        <p><strong>The default order:</strong> start with MAI Code 1 Flash or Haiku 4.5 for small tasks. Move up to GPT 5.3-Codex for heavy coding, or Sonnet 5 when the task is unclear or spans many files. Use Opus 4.8 (or Fable 5 on approved teams) only for planning and the hardest tasks. If a cheap model fails the same task two or three times, move up instead of trying again and again. For screenshots, diagrams, or UI pictures, use Sonnet 5.</p>
                     </div>
                     <div class="callout" style="border-left-color: var(--accent); background: rgba(88, 166, 255, 0.08);">
-                        <p><strong>Who can use what:</strong> only some teams can use Fable 5. Everyone can use Opus 4.8, Haiku 4.5, Sonnet 5, GPT 5.3-Codex, and MAI Code 1 Flash. For all teams, Opus 4.8 is the top model to move up to, and Sonnet 5 (or GPT 5.3-Codex for heavy coding) is your everyday choice.</p>
+                        <p><strong>Who can use what:</strong> only some teams can use Fable 5. Everyone can use Opus 4.8, Haiku 4.5, Sonnet 5, GPT 5.6 Terra, GPT 5.3-Codex, and MAI Code 1 Flash. For all teams, Opus 4.8 is the top model to move up to, and Sonnet 5 (or GPT 5.3-Codex for heavy coding) is your everyday choice. GPT 5.6 Sol, GPT 5.6 Luna, and Kimi K2.7 Code are turned off on purpose: Sol costs more than Opus 4.8 for output, and Luna and Kimi repeat what our cheap models already do.</p>
                     </div>
                     <div class="callout" style="border-left-color: var(--accent); background: rgba(88, 166, 255, 0.08);">
-                        <p><strong>We are testing GPT 5.3-Codex as a main coding model:</strong> right now Codex is cheaper than Sonnet 5 for both input and output, and it is made for code. So for heavy coding it may be better for both cost and quality, not just a backup. We are checking if it can do a lot of our daily coding instead of Sonnet 5. For now, use Sonnet 5 by default and use Codex for heavy coding. If you use it, tell us how it compares so we can decide.</p>
+                        <p><strong>We are comparing two models with Sonnet 5:</strong> GPT 5.3-Codex for coding (cheaper than Sonnet 5 and made for code) and GPT 5.6 Terra for thinking work (cheaper input, same output, and a newer generation). For now, keep Sonnet 5 as the default, use Codex for heavy coding, and try Terra for the same kind of work you would give Sonnet 5. If you use either one, tell us how it compares so we can decide which models stay.</p>
                     </div>
-                    <p class="footer-note" style="margin-top: var(--size-4);"><strong>Maintainers:</strong> model names and rates are in only two places, this table and the rate card in the Tokenomics section. When a model changes (added, removed, new price, or new team access), update both, then change the version number at the top. No other part of the guide lists a model name, so these two spots are all you need to update.</p>
+                    <p class="footer-note" style="margin-top: var(--size-4);"><strong>Maintainers:</strong> model names and rates are in only two places, this table and the rate card in the Tokenomics section. When a model changes (added, removed, new price, or new team access), update both, then change the version number at the top. No other part of the guide lists a model name, so these two spots are all you need to update. New models always start as trial options only: they replace a current model only after winning a side-by-side comparison on real tasks, never just because they are newer.</p>
                 </section>
 
                 <section class="section" id="workflow">
@@ -1429,6 +1440,7 @@
                                 <li>When the problem is unclear, talk it over with a teammate first, the way developers always have, instead of using a model as your first way to think.</li>
                                 <li>Give clear rules and a short do-not list.</li>
                                 <li>Add only the files, examples, and commands that matter.</li>
+                                <li>Limit agents to the folders they need, and turn on only the tools (MCP) you need.</li>
                                 <li>Update <span class="inline-code">progress.md</span> after each completed task.</li>
                                 <li>Check that the plan is finished before you move on.</li>
                             </ul>
@@ -1440,6 +1452,7 @@
                                 <li>Use a top model to plan or review small fixes.</li>
                                 <li>Paste the whole repo or long, unrelated history into the prompt.</li>
                                 <li>Keep using an old chat for new, unrelated work.</li>
+                                <li>Paste big raw logs or terminal output into the prompt. Copy only the error lines that matter.</li>
                                 <li>Let one model's answer feed another model without you checking it.</li>
                                 <li>Mark work done before you test it, commit it, and check it yourself.</li>
                             </ul>
